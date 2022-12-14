@@ -1,10 +1,10 @@
 import React from "react";
 import Login from "./Login/Login";
-import CreateAccount from "./CreateAccount";
+import CreateAccount from "./CreateAccount/CreateAccount";
 import { Route, Routes } from "react-router-dom";
 import Calendar from "./Calendar";
 import Profile from "./Profile/Profile";
-import ToDo from "./ToDo";
+import ToDo from "./ToDo/ToDo";
 import HabitTracker from "./HabitTracker";
 import DailyPuzzle from "./DailyPuzzle";
 

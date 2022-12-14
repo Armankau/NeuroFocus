@@ -16,3 +16,8 @@ puts "seeding todo"
 ToDo.create(name: "Clean Room", user: User_1, task_done: true)
 ToDo.create(name: "Clean Kitchen", user: User_2, task_done: false)
 
+puts "seeding todo weekly"
+ToDoWeekly.create(name: "Make appt", user: User_1)
+
+puts "seeding todo montly"
+ToDoMonthly.create(name: "nails appt", user: User_1)
