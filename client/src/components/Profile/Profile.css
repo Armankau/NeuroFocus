@@ -1,0 +1,25 @@
+.profileInformation{
+    text-align: center;
+    background: linear-gradient(bisque(252, 171, 183), rgb(248, 137, 156));
+    padding: 1rem;
+    width: 25rem;
+    height: 30 rem;
+    opacity: .8;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 2px 2px brown ;
+    color: black;
+    border: solid;
+    border-width: 1px;
+}
+
+.profileContainer{
+    height: 100%;
+    text-align: center;
+    padding: 250px;
+}
+
+.header{
+    text-align: center;
+    background-color: bisque;
+}

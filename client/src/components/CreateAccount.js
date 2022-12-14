@@ -1,5 +1,6 @@
 import React, { useDebugValue, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
+import "./CreateAccount.css"
 
 function CreateAccount(){
 
@@ -9,6 +10,7 @@ function CreateAccount(){
     const [sex, setSex] = useState("")
     const [name, setName] = useState("")
     const [age, setAge] = useState("")
+    const navigate = useNavigate()
 
     function handleSubmit(e){
         e.preventDefault()
@@ -26,9 +28,11 @@ function CreateAccount(){
     }
 
     function backToLogin(){
+      navigate("/login")
     }
     return(
-        <form onSubmit={handleSubmit}>
+      <div className="account-form-container">
+        <form className="account-form" onSubmit={handleSubmit}>
             <label htmlFor="username">Username:</label>
             <input
             type="text"
@@ -74,7 +78,8 @@ function CreateAccount(){
             <button type="submit">Create Account</button>
             <h1>OR</h1>
             <button onClick={backToLogin}>Back to Login</button>
-      </form>
+          </form>
+      </div>
     )
 }
 
