@@ -1,0 +1,24 @@
+.account-form{
+    text-align: center;
+    background-color: bisque;
+    padding: 2rem;
+    width: 25rem;
+    height: 30 rem;
+    opacity: .8;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 2px 2px brown ;
+    color: black;
+    border: solid;
+    border-width: 1px;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+
+.account-form input {
+    margin: 10px;
+}
+.account-form-container{
+    height: 100%;
+    padding: 225px;
+}

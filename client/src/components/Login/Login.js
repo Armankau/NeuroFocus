@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
+import "./Login.css"
 function Login(){
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
+    const navigate = useNavigate()
     function handlSubmit(e){
         e.preventDefault()
         const formData = {
@@ -19,12 +21,17 @@ function Login(){
             body: JSON.stringify(formData),
           })
             .then((r) => r.json())
-            .then((data) => console.log(data));
+            .then(navigate("/"));
         }
 
+        
+    function handleAccount(){
+        navigate("/create_account")
+    }
+
     return (
-        <div>
-            <form onSubmit={handlSubmit}>
+        <div className="login-div">
+            <form  className="form" onSubmit={handlSubmit}>
                 <input 
                     id="username"
                     type="text"
@@ -41,8 +48,10 @@ function Login(){
                 <input 
                 type="submit"
                 value="Login"
+                className="login_buttons"
                 />
-
+                <h3>OR</h3>
+                <button onClick={handleAccount} className="login_buttons">Create Account</button>
             </form>
         </div>
     )
