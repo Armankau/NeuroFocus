@@ -24,7 +24,11 @@ Rails.application.routes.draw do
 
   get "weeklyToDo", to: "to_do_weeklies#index"
   delete "/deleteToDoWeekly/:id", to: "to_do_weeklies#destroy"
+  post "/weeklyToDo", to: "to_do_weeklies#create"
+
 
   get "/to_do_monthlies", to: "to_do_monthlies#index"
   delete "/to_do_monthlies/:id", to: "to_do_monthlies#destroy"
+  post "/monthlyToDo", to: "to_do_monthlies#create"
+
 end

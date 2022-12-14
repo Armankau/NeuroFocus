@@ -40,8 +40,8 @@ function ToDo(){
             <Navbar />
             <h1 className="header">My To Do List</h1>
             <ToDoList data={data} setData={setData} me={me}/>
-            <ToDoWeekly weekly={weekly}/>
-            <ToDoMonthly monthly={monthly}/>
+            <ToDoWeekly weekly={weekly} me={me}/>
+            <ToDoMonthly monthly={monthly} me={me}/>
         </>
 
     )
