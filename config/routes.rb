@@ -26,5 +26,5 @@ Rails.application.routes.draw do
   delete "/deleteToDoWeekly/:id", to: "to_do_weeklies#destroy"
 
   get "/to_do_monthlies", to: "to_do_monthlies#index"
-
+  delete "/to_do_monthlies/:id", to: "to_do_monthlies#destroy"
 end
