@@ -17,7 +17,7 @@ function Profile(){
             <h1 className="header">Your Profile</h1>
             <div className="profileContainer">
                 <div className="profileInformation">
-                    <h2>Personal Information</h2>
+                    <h2  className="header">Personal Information</h2>
                     <p>Username: {data.username}</p>
                     <p>Name: {data.name}</p>
                     <p>Age: {data.age}</p>
