@@ -4,7 +4,7 @@ import Score from "../Score/Score";
 import "./Habit.css"
 import Habit from "./Habit";
 
-function HabitTracker({me}){
+function HabitTracker({me, handleScoreToDo}){
 
     const [habits, setHabits] = useState([])
 
@@ -19,7 +19,7 @@ function HabitTracker({me}){
         <>
             <Navbar />
             <h1 className="header" >Habits</h1>
-            <Habit habits={habits} me={me} setHabits={setHabits}/>
+            <Habit habits={habits} me={me} setHabits={setHabits} handleScoreToDo={handleScoreToDo}/>
             <Score me={me}/>
 
         </>

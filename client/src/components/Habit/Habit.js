@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddHabit from "./AddHabit";
 
-function Habit({habits, setHabits, me}){
+function Habit({habits, setHabits, me, handleScoreToDo}){
     const [name, setName] = useState("")
      
     function handleClick(habit) {
@@ -37,6 +37,9 @@ function Habit({habits, setHabits, me}){
       setHabits([...habits, newHabit])
     }
     
+    function handleComplete(){
+        handleScoreToDo()
+    }
 
     function handleHabitName(e){
         setName(e.target.value)
@@ -44,14 +47,13 @@ function Habit({habits, setHabits, me}){
 
     return(
         <div id="habitTracker">
-        <h1 className="header">My Habit Tracker</h1>
-        {habits.map((habit) => <p className="habit">
-            {habit.name}
-            <button onClick={() => handleClick(habit)} className="deleteHabit">Delete Habit</button>
-            <button onClick={() => handleClick(habit)} className="completeHabit">Completed</button>
-
-        </p>)}
-        <AddHabit handleAddHabit={handleAddHabit} handleHabitName={handleHabitName} name={name}/>
+            <h1 className="header">My Habit Tracker</h1>
+            {habits.map((habit) => <p className="habit">
+                {habit.name}
+                <button onClick={() => handleClick(habit)} className="deleteHabit">Delete Habit</button>
+                <button onClick={() => handleComplete(habit)} className="completeHabit">Completed</button>
+            </p>)}
+            <AddHabit handleAddHabit={handleAddHabit} handleHabitName={handleHabitName} name={name}/>
         </div>
     )
 }
