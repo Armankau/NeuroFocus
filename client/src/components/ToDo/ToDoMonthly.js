@@ -34,7 +34,7 @@ function ToDoMonthly({monthly, me}){
 
 
     return(
-        <div className="ToDoWeeklyContainer">
+        <div className="ToDoMonthlyContainer">
             <h1 className="header" id="toDoHeader">This Month</h1>
             <h3>{monthly.map((todo) => <div>
                 {todo.name}

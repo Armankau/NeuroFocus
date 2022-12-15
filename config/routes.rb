@@ -38,5 +38,6 @@ Rails.application.routes.draw do
 
   #todo yearly routes
   get "/to_do_yearlies", to: "to_do_yearlies#index"
+  delete "/to_do_yearlies/:id", to: "to_do_yearlies#destroy"
 
 end
