@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Navbar from "./Navbar/Navbar"
-import Score from "./ToDo/Score";
+import Score from "./Score/Score";
 
 function Calendar({me}){
    
