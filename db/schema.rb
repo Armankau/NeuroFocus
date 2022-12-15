@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_15_000059) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_15_205855) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,12 +23,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_15_000059) do
     t.index ["user_id"], name: "index_calendars_on_user_id"
   end
 
+  create_table "habit_dates", force: :cascade do |t|
+    t.string "date"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_habit_dates_on_user_id"
+  end
+
   create_table "habits", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id"
-    t.string "date"
+    t.bigint "habit_date_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["habit_date_id"], name: "index_habits_on_habit_date_id"
     t.index ["user_id"], name: "index_habits_on_user_id"
   end
 
