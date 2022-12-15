@@ -4,14 +4,18 @@ import AddWeekly from "./AddWeekly";
 function ToDoWeekly({weekly, me, handleScoreToDo, setWeekly}){
     const [name, setTaskName] = useState("")
 
-    function handleDeleteWeekly(id){
+    function handleDeleteWeekly(data){
         handleScoreToDo()        
-        fetch(`/deleteToDoWeekly/${id}`, {
+        fetch(`/deleteToDoWeekly/${data.id}`, {
             method: "DELETE",
           })
-            .then((r) => r.json())
-            .then((data) => console.log(data));
-    }
+          .then(() => onDelete(data));
+        }
+  
+        function onDelete(deleted){
+          const newTasks = weekly.filter((task) => task.id != deleted.id)
+          setWeekly(newTasks)
+        }
 
     function handleAddTask(e){
         e.preventDefault()
@@ -42,7 +46,7 @@ function ToDoWeekly({weekly, me, handleScoreToDo, setWeekly}){
             <h1 className="header" id="toDoHeader">This Week</h1>
             <p>{weekly.map((todo) => <div>
                 {todo.name}
-                <button className="completedTask" onClick={() => handleDeleteWeekly(todo.id)}>Done</button>
+                <button className="completedTask" onClick={() => handleDeleteWeekly(todo)}>Done</button>
             </div>)}</p>
             <AddWeekly handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>
         </div>
