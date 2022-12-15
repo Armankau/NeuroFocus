@@ -6,16 +6,23 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
 
     const [name, setTaskName] = useState("")
     
-    function handleClick(id) {
-        handleScoreToDo()        
-        fetch(`/deleteToDo/${id}`, {
+    function handleClick(data) {
+      handleScoreToDo()        
+      console.log(data.id)
+        fetch(`/deleteToDo/${data.id}`, {
           method: "DELETE",
         })
-          .then((r) => r.json())
-          .then(() => console.log("deleted!"));
+        .then(() => onDelete(data));
       }
 
-
+      function onDelete(deleted){
+        console.log(deleted.id)
+        const newTasks = data.filter((task) => task.id != deleted.id)
+        setData(newTasks)
+        console.log(data)
+      }
+    
+    
     function handleAddTask(e){
         const formData = {
            name: name,
@@ -43,7 +50,7 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
                 {data.map((data) => 
                 <div id="todoData">{data.name}  
                 {/* <button className="completedTask" onClick={handleCompleted}>Mark Completed</button> */}
-                <button className="completedTask" onClick={() => handleClick(data.id)}>Done</button>
+                <button className="completedTask" onClick={() => handleClick(data)}>Done</button>
                 </div>)}
             </p>
             <AddTask handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>

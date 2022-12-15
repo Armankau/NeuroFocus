@@ -22,9 +22,8 @@ function ToDo({me}){
           body: JSON.stringify({score: me.score + 1}),
         })
           .then((r) => r.json())
-          .then((updatedItem) => setScore(updatedItem.score));
+          .then((task) => setScore(task.score));
       }
-    console.log(score)
 
     useEffect(() => {
         fetch("/todos")
