@@ -17,10 +17,23 @@ class UsersController < ApplicationController
       end
     end
 
+    def update
+      user = User.find_by(id: session[:user_id])
+      if user
+        user.update(update_params)
+        render json: user
+      else
+        render json: { error: "User not found" }, status: :not_found
+      end
+    end
+
 
     private
-    
-      def create_params
-        params.permit(:name, :age, :username, :password, :email, :sex)
-      end
+    def update_params
+      params.permit(:score)
+    end
+
+    def create_params
+        params.permit(:name, :age, :username, :password, :email, :sex, :score)
+    end
 end
