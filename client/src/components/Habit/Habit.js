@@ -45,9 +45,11 @@ function Habit({habits, setHabits, me}){
     return(
         <div id="habitTracker">
         <h1 className="header">My Habit Tracker</h1>
-        {habits.map((habit) => <p>
+        {habits.map((habit) => <p className="habit">
             {habit.name}
-            <button onClick={() => handleClick(habit)}>Remove</button>
+            <button onClick={() => handleClick(habit)} className="deleteHabit">Delete Habit</button>
+            <button onClick={() => handleClick(habit)} className="completeHabit">Completed</button>
+
         </p>)}
         <AddHabit handleAddHabit={handleAddHabit} handleHabitName={handleHabitName} name={name}/>
         </div>
