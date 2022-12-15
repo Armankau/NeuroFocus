@@ -23,6 +23,7 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
     
     
     function handleAddTask(e){
+      e.preventDefault()
         const formData = {
            name: name,
            user_id: me.id
@@ -35,7 +36,11 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
             body: JSON.stringify(formData),
           })
             .then((r) => r.json())
-            .then((data) => console.log(data));
+            .then((newTask) => handleNewTask(newTask));
+    }
+
+    function handleNewTask(newTask){
+      setData([...data, newTask])
     }
 
     function handleTaskName(e){

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddWeekly from "./AddWeekly";
 
-function ToDoWeekly({weekly, me, handleScoreToDo}){
+function ToDoWeekly({weekly, me, handleScoreToDo, setWeekly}){
     const [name, setTaskName] = useState("")
 
     function handleDeleteWeekly(id){
@@ -14,6 +14,7 @@ function ToDoWeekly({weekly, me, handleScoreToDo}){
     }
 
     function handleAddTask(e){
+        e.preventDefault()
         const formData = {
            name: name,
            user_id: me.id
@@ -25,8 +26,12 @@ function ToDoWeekly({weekly, me, handleScoreToDo}){
             },
             body: JSON.stringify(formData),
           })
-            .then((r) => r.json())
-            .then((data) => console.log(data));
+          .then((r) => r.json())
+          .then((newTask) => handleNewTask(newTask));
+  }
+
+  function handleNewTask(newTask){
+      setWeekly([...weekly, newTask])
     }
 
     function handleTaskName(e){

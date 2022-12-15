@@ -58,10 +58,26 @@ function ToDo({me}){
             <Navbar />
             <Score me={me} />
             <h1 className="header">My To Do List</h1>
-            <ToDoList data={data} setData={setData} me={me} handleScoreToDo={handleScoreToDo}/>
-            <ToDoWeekly weekly={weekly} me={me} handleScoreToDo={handleScoreToDo}/>
-            <ToDoMonthly monthly={monthly} me={me} handleScoreToDo={handleScoreToDo}/>
-            <ToDoYearly yearly={yearly} me={me} handleScoreToDo={handleScoreToDo}/>
+            <ToDoList 
+                data={data} 
+                setData={setData} 
+                me={me} 
+                handleScoreToDo={handleScoreToDo}/>
+            <ToDoWeekly 
+                setWeekly={setWeekly}
+                weekly={weekly} 
+                me={me} 
+                handleScoreToDo={handleScoreToDo}/>
+            <ToDoMonthly 
+                setMonthly={setMonthly}
+                monthly={monthly} 
+                me={me}  
+                handleScoreToDo={handleScoreToDo}/>
+            <ToDoYearly 
+                setYearly={setYearly}
+                yearly={yearly} 
+                me={me} 
+                handleScoreToDo={handleScoreToDo}/>
         </>
 
     )
