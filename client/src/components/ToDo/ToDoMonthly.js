@@ -42,12 +42,25 @@ function ToDoMonthly({monthly, me, handleScoreToDo, setMonthly}){
           setMonthly(newTasks)
         }
 
+        function handleDelete(data){
+          fetch(`/to_do_monthlies/${data.id}`, {
+              method: "DELETE",
+            })
+            .then(() => onDelete(data));
+          }
+    
+          function onDelete(deleted){
+            const newTasks = monthly.filter((task) => task.id != deleted.id)
+            setMonthly(newTasks)
+          }
+
 
     return(
         <div className="ToDoMonthlyContainer">
             <h1 className="header" id="toDoHeader">This Month</h1>
-            <p>{monthly.map((todo) => <div>
+            <p>{monthly.map((todo) => <div className="todoData">
                 {todo.name}
+                <button className="completedTask" onClick={() => handleDelete(todo)}>Delete</button>
                 <button className="completedTask" onClick={() => handleDeleteMonthly(todo)}>Done</button>
             </div>)}</p>
             <AddMonthly handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>

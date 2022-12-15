@@ -23,8 +23,6 @@ function ToDoYearly({yearly, me, handleScoreToDo, setYearly}){
           .then((newTask) => handleNewTask(newTask));
   }
 
-  
-
   function handleNewTask(newTask){
       setYearly([...yearly, newTask])
     }
@@ -33,27 +31,38 @@ function ToDoYearly({yearly, me, handleScoreToDo, setYearly}){
         setTaskName(e.target.value)
     }
     function handleDeleteYearly(data){
-        handleScoreToDo()        
+      handleScoreToDo()        
         fetch(`/to_do_yearlies//${data.id}`, {
             method: "DELETE",
-          })
-          .then(() => onDelete(data));
-        }
+        })
+      .then(() => onDelete(data));
+    }
   
-        function onDelete(deleted){
-          const newTasks = yearly.filter((task) => task.id != deleted.id)
-          setYearly(newTasks)
-        }
+    function onDelete(deleted){
+      const newTasks = yearly.filter((task) => task.id != deleted.id)
+      setYearly(newTasks)
+    }
+
+  function handleDelete(data){
+      fetch(`/to_do_yearlies//${data.id}`, {
+        method: "DELETE",
+      })
+    .then(() => onDelete(data));
+    }
+  
+  function onDelete(deleted){
+    const newTasks = yearly.filter((task) => task.id != deleted.id)
+    setYearly(newTasks)
+  }
     
 
     return(
         <div className="ToDoYearlyContainer">
         <h1 className="header" id="toDoHeader">This Year</h1>
-        <p>{yearly.map((todo) => <div>
+        <p>{yearly.map((todo) => <div className="todoData">
             {todo.name}
-            <button className="completedTask" 
-            onClick={() => handleDeleteYearly(todo)}
-            >Done</button>
+            <button className="completedTask" onClick={() => handleDelete(todo)}>Delete</button>
+            <button className="completedTask" onClick={() => handleDeleteYearly(todo)}>Done</button>
         </div>)}</p>
         <AddYearly handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>
     </div>

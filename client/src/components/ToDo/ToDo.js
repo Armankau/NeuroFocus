@@ -56,7 +56,6 @@ function ToDo({me}){
     return(
         <>
             <Navbar />
-            <Score me={me}/>
             <h1 className="header">My To Do List</h1>
             <ToDoList 
                 data={data} 
@@ -78,6 +77,8 @@ function ToDo({me}){
                 yearly={yearly} 
                 me={me} 
                 handleScoreToDo={handleScoreToDo}/>
+            <Score me={me}/>
+
         </>
 
     )

@@ -17,6 +17,10 @@
 .habit{
     margin: 0px;
 }
+.habitForm{
+    background-color: pink;
+    text-align: center;
+}
 .deleteHabit{
     background-color: pink;
     float: right;
@@ -28,6 +32,4 @@
     background-color: pink;
     float: right;
     margin-bottom: 10px;
-    /* margin-right: 10px; */
-    /* transform: translate(-10%) */
 }

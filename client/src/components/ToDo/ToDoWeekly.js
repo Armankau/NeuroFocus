@@ -12,10 +12,22 @@ function ToDoWeekly({weekly, me, handleScoreToDo, setWeekly}){
           .then(() => onDelete(data));
         }
   
-        function onDelete(deleted){
-          const newTasks = weekly.filter((task) => task.id != deleted.id)
-          setWeekly(newTasks)
-        }
+    function onDelete(deleted){
+      const newTasks = weekly.filter((task) => task.id != deleted.id)
+      setWeekly(newTasks)
+    }
+
+    function handleDelete(data){
+        fetch(`/deleteToDoWeekly/${data.id}`, {
+          method: "DELETE",
+          })
+          .then(() => onDelete(data));
+    }
+    
+    function onDelete(deleted){
+      const newTasks = weekly.filter((task) => task.id != deleted.id)
+      setWeekly(newTasks)
+    }
 
     function handleAddTask(e){
         e.preventDefault()
@@ -44,8 +56,9 @@ function ToDoWeekly({weekly, me, handleScoreToDo, setWeekly}){
     return(
         <div className="ToDoWeeklyContainer">
             <h1 className="header" id="toDoHeader">This Week</h1>
-            <p>{weekly.map((todo) => <div>
+            <p>{weekly.map((todo) => <div className="todoData">
                 {todo.name}
+                <button className="completedTask" onClick={() => handleDelete(todo)}>Delete</button>
                 <button className="completedTask" onClick={() => handleDeleteWeekly(todo)}>Done</button>
             </div>)}</p>
             <AddWeekly handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>

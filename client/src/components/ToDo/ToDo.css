@@ -63,15 +63,17 @@
     text-decoration: line-through;
  }
 
- #todoData{
-    margin-top: 0px;
+ .todoData{
+    margin: 10px;
  }
  
 .completedTask{
-    margin: 10px;
     background-color: pink;
-    width: 70px;
+    float: right;
+    margin-right: 10px;
+    margin-left: 10px;
 }
+
 
 #addButton{
     background-color: white;
