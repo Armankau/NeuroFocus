@@ -5,7 +5,7 @@ import "./ToDo.css"
 import ToDoWeekly from "./ToDoWeekly";
 import ToDoMonthly from "./ToDoMonthly";
 import ToDoYearly from "./ToDoYearly";
-import Score from "./Score";
+import Score from "../Score/Score";
 function ToDo({me}){
 
     const [data, setData] = useState([])

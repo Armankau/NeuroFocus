@@ -1,6 +1,6 @@
 import Navbar from "./Navbar/Navbar";
 import React from "react";
-import Score from "./ToDo/Score";
+import Score from "./Score/Score";
 
 function DailyPuzzle({me}){
     return(
