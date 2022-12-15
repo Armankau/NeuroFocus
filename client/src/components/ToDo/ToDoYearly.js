@@ -1,11 +1,12 @@
 import { useState } from "react";
 import AddYearly from "./AddYearly";
 
-function ToDoYearly({yearly, me, handleScoreToDo}){
+function ToDoYearly({yearly, me, handleScoreToDo, setYearly}){
 
     const [name, setTaskName] = useState("")
 
     function handleAddTask(e){
+        e.preventDefault()
         const formData = {
            name: name,
            user_id: me.id
@@ -17,8 +18,12 @@ function ToDoYearly({yearly, me, handleScoreToDo}){
             },
             body: JSON.stringify(formData),
           })
-            .then((r) => r.json())
-            .then((data) => console.log(data));
+          .then((r) => r.json())
+          .then((newTask) => handleNewTask(newTask));
+  }
+
+  function handleNewTask(newTask){
+      setYearly([...yearly, newTask])
     }
 
     function handleTaskName(e){
