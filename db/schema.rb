@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_14_225255) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_15_000059) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,6 +68,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_225255) do
     t.index ["user_id"], name: "index_to_do_weeklies_on_user_id"
   end
 
+  create_table "to_do_yearlies", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_to_do_yearlies_on_user_id"
+  end
+
   create_table "to_dos", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id"
@@ -84,6 +92,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_225255) do
     t.string "password_digest"
     t.string "email"
     t.string "sex"
+    t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
