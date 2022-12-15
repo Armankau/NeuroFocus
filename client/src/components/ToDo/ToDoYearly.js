@@ -5,6 +5,7 @@ function ToDoYearly({yearly, me, handleScoreToDo, setYearly}){
 
     const [name, setTaskName] = useState("")
 
+    // console.log(document.getElementById("ToDoform"))
     function handleAddTask(e){
         e.preventDefault()
         const formData = {
@@ -21,6 +22,8 @@ function ToDoYearly({yearly, me, handleScoreToDo, setYearly}){
           .then((r) => r.json())
           .then((newTask) => handleNewTask(newTask));
   }
+
+  
 
   function handleNewTask(newTask){
       setYearly([...yearly, newTask])
@@ -41,6 +44,7 @@ function ToDoYearly({yearly, me, handleScoreToDo, setYearly}){
           const newTasks = yearly.filter((task) => task.id != deleted.id)
           setYearly(newTasks)
         }
+    
 
     return(
         <div className="ToDoYearlyContainer">
