@@ -1,8 +1,8 @@
 .ToDoTodayContainer{
-    text-align: center;
+    /* text-align: center; */
     background: linear-gradient(bisque(252, 171, 183), rgb(248, 137, 156));
-    padding: 1rem;
-    width: 35 rem;
+    padding: 1%;
+    width: 20%;
     height: 30 rem;
     opacity: .8;
     display: inline-grid;
@@ -10,37 +10,50 @@
     color: black;
     border: solid;
     border-width: 1px;
-    margin: 10px;
-    margin-left: 60px;
+    margin: 1.4%;
 }
 .ToDoMonthlyContainer{
-    text-align: center;
+    /* text-align: center; */
     background: linear-gradient(bisque(252, 171, 183), rgb(248, 137, 156));
-    padding: 1rem;
-    width: 35 rem;
+    padding: 1%;
+    width: 20%;
     height: 30 rem;
     opacity: .8;
     display: inline-grid;
     box-shadow: 2px 2px brown ;
     color: black;
     border: solid;
+    margin: 1.4%;
     border-width: 1px;
-    margin: 10px;
 }
 .ToDoWeeklyContainer{
-    text-align: center;
+    /* text-align: center; */
     background: linear-gradient(bisque(252, 171, 183), rgb(248, 137, 156));
-    padding: 1rem;
-    width: 35 rem;
+    padding: 1%;
+    width: 20%;
     height: 30 rem;
     opacity: .8;
     display: inline-grid;
     box-shadow: 2px 2px brown ;
     color: black;
     border: solid;
+    margin: 1.4%;
     border-width: 1px;
-    margin: 10px;
+}
 
+.ToDoYearlyContainer{
+    /* text-align: center; */
+    background: linear-gradient(bisque(252, 171, 183), rgb(248, 137, 156));
+    padding: 1%;
+    width: 20%;
+    height: 30 rem;
+    opacity: .8;
+    display: inline-grid;
+    box-shadow: 2px 2px brown ;
+    color: black;
+    border: solid;
+    margin: 1.4%;
+    border-width: 1px;
 }
 #toDoHeader{
     margin-top: 0px;
@@ -57,7 +70,7 @@
 .completedTask{
     margin: 10px;
     background-color: pink;
-    width: 100px;
+    width: 50px;
 }
 
 #addButton{

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddMonthly from "./AddMonthly";
 
-function ToDoMonthly({monthly, me}){
+function ToDoMonthly({monthly, me, handleScoreToDo}){
     const [name, setTaskName] = useState("")
 
     function handleAddTask(e){
@@ -25,6 +25,7 @@ function ToDoMonthly({monthly, me}){
     }
 
     function handleDeleteMonthly(id){
+        handleScoreToDo()        
         fetch(`/to_do_monthlies/${id}`, {
             method: "DELETE",
           })
@@ -36,10 +37,10 @@ function ToDoMonthly({monthly, me}){
     return(
         <div className="ToDoMonthlyContainer">
             <h1 className="header" id="toDoHeader">This Month</h1>
-            <h3>{monthly.map((todo) => <div>
+            <p>{monthly.map((todo) => <div>
                 {todo.name}
-                <button className="completedTask" onClick={() => handleDeleteMonthly(todo.id)}>Finish Task</button>
-            </div>)}</h3>
+                <button className="completedTask" onClick={() => handleDeleteMonthly(todo.id)}>Done</button>
+            </div>)}</p>
             <AddMonthly handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>
         </div>
     )

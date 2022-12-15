@@ -1,5 +1,31 @@
-function ToDoYearly({yearly, me}){
+import { useState } from "react";
+import AddYearly from "./AddYearly";
+
+function ToDoYearly({yearly, me, handleScoreToDo}){
+
+    const [name, setTaskName] = useState("")
+
+    function handleAddTask(e){
+        const formData = {
+           name: name,
+           user_id: me.id
+        }
+        fetch("/yearlyToDo", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          })
+            .then((r) => r.json())
+            .then((data) => console.log(data));
+    }
+
+    function handleTaskName(e){
+        setTaskName(e.target.value)
+    }
     function handleDeleteYearly(id){
+        handleScoreToDo()        
         fetch(`/to_do_yearlies//${id}`, {
             method: "DELETE",
           })
@@ -8,14 +34,15 @@ function ToDoYearly({yearly, me}){
     }
 
     return(
-        <div className="ToDoWeeklyContainer">
+        <div className="ToDoYearlyContainer">
         <h1 className="header" id="toDoHeader">This Year</h1>
-        <h3>{yearly.map((todo) => <div>
+        <p>{yearly.map((todo) => <div>
             {todo.name}
             <button className="completedTask" 
             onClick={() => handleDeleteYearly(todo.id)}
-            >Finish Task</button>
-        </div>)}</h3>
+            >Done</button>
+        </div>)}</p>
+        <AddYearly handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>
     </div>
     )
 }

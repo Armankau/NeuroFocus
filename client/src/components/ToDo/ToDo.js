@@ -5,6 +5,7 @@ import "./ToDo.css"
 import ToDoWeekly from "./ToDoWeekly";
 import ToDoMonthly from "./ToDoMonthly";
 import ToDoYearly from "./ToDoYearly";
+import Score from "./Score";
 function ToDo(){
 
     const [data, setData] = useState([])
@@ -12,6 +13,19 @@ function ToDo(){
     const [weekly, setWeekly] = useState([])
     const [monthly, setMonthly] = useState([])
     const [yearly, setYearly] = useState([])
+    const [score, setScore] = useState("")
+    function handleScoreToDo() {
+        fetch(`/score/${me.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({score: me.score + 1}),
+        })
+          .then((r) => r.json())
+          .then((updatedItem) => setScore(updatedItem.score));
+      }
+    console.log(score)
 
     useEffect(() => {
         fetch("/todos")
@@ -46,11 +60,12 @@ function ToDo(){
     return(
         <>
             <Navbar />
+            <Score me={me} />
             <h1 className="header">My To Do List</h1>
-            <ToDoList data={data} setData={setData} me={me}/>
-            <ToDoWeekly weekly={weekly} me={me}/>
-            <ToDoMonthly monthly={monthly} me={me}/>
-            <ToDoYearly yearly={yearly} me={me}/>
+            <ToDoList data={data} setData={setData} me={me} handleScoreToDo={handleScoreToDo}/>
+            <ToDoWeekly weekly={weekly} me={me} handleScoreToDo={handleScoreToDo}/>
+            <ToDoMonthly monthly={monthly} me={me} handleScoreToDo={handleScoreToDo}/>
+            <ToDoYearly yearly={yearly} me={me} handleScoreToDo={handleScoreToDo}/>
         </>
 
     )

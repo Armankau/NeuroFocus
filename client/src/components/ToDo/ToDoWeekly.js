@@ -1,10 +1,11 @@
 import { useState } from "react";
 import AddWeekly from "./AddWeekly";
 
-function ToDoWeekly({weekly, me}){
+function ToDoWeekly({weekly, me, handleScoreToDo}){
     const [name, setTaskName] = useState("")
 
     function handleDeleteWeekly(id){
+        handleScoreToDo()        
         fetch(`/deleteToDoWeekly/${id}`, {
             method: "DELETE",
           })
@@ -34,10 +35,10 @@ function ToDoWeekly({weekly, me}){
     return(
         <div className="ToDoWeeklyContainer">
             <h1 className="header" id="toDoHeader">This Week</h1>
-            <h3>{weekly.map((todo) => <div>
+            <p>{weekly.map((todo) => <div>
                 {todo.name}
-                <button className="completedTask" onClick={() => handleDeleteWeekly(todo.id)}>Finish Task</button>
-            </div>)}</h3>
+                <button className="completedTask" onClick={() => handleDeleteWeekly(todo.id)}>Done</button>
+            </div>)}</p>
             <AddWeekly handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>
         </div>
     )

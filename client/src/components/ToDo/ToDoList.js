@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import AddTask from "./AddTask";
 import ToDo from "./ToDo";
 
-function ToDoList({data, me, setData}){
+function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
 
     const [name, setTaskName] = useState("")
     
     function handleClick(id) {
+        handleScoreToDo()        
         fetch(`/deleteToDo/${id}`, {
           method: "DELETE",
         })
@@ -38,13 +39,13 @@ function ToDoList({data, me, setData}){
     return(
         <div className="ToDoTodayContainer">
             <h1 className="header" id="toDoHeader">Today</h1>
-            <h2>
+            <p>
                 {data.map((data) => 
                 <div id="todoData">{data.name}  
                 {/* <button className="completedTask" onClick={handleCompleted}>Mark Completed</button> */}
-                <button className="completedTask" onClick={() => handleClick(data.id)}>Finish Task</button>
+                <button className="completedTask" onClick={() => handleClick(data.id)}>Done</button>
                 </div>)}
-            </h2>
+            </p>
             <AddTask handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>
         </div>
        
