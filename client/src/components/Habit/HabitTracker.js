@@ -19,7 +19,7 @@ function HabitTracker({me}){
             <Navbar />
             <Score me={me}/>
             <h1 className="header" >Habits</h1>
-            <Habit habits={habits}/>
+            <Habit habits={habits} setHabits={setHabits}/>
         </>
     )
 }
