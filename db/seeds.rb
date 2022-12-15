@@ -5,8 +5,8 @@ User_2 = User.create(name: "Rajdeep Kaur", age: 17, username: "Raj", password: "
 
 
 puts "seeding habit"
-Habit.create(name: "exercise", user: User_2 )
-Habit.create(name: "Jog", user: User_1 )
+Habit.create(name: "exercise", user: User_2, date: "12/15" )
+Habit.create(name: "Jog", user: User_1, date: "12/16")
 
 puts "seeding todo"
 ToDo.create(name: "Clean Room", user: User_1, task_done: true)

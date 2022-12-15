@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Calendar from "./Calendar";
 import Profile from "./Profile/Profile";
 import ToDo from "./ToDo/ToDo";
-import HabitTracker from "./HabitTracker";
+import HabitTracker from "./Habit/HabitTracker";
 import DailyPuzzle from "./DailyPuzzle";
 
 function App() {
