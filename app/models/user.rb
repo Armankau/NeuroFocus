@@ -7,4 +7,5 @@ class User < ApplicationRecord
     has_many :puzzles
     has_many :to_do_weeklies
     has_many :to_do_monthlies
+    has_many :to_do_yearlies
 end

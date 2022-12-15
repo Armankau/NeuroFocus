@@ -21,3 +21,6 @@ ToDoWeekly.create(name: "Make appt", user: User_1)
 
 puts "seeding todo montly"
 ToDoMonthly.create(name: "nails appt", user: User_1)
+
+puts "seeding todo montly"
+ToDoYearly.create(name: "nails appt", user: User_1)
