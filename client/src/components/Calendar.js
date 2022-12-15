@@ -1,12 +1,13 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Navbar from "./Navbar/Navbar"
 import Score from "./ToDo/Score";
 
-function Calendar(){
+function Calendar({me}){
+   
     return(
         <>
             <Navbar />
-            {/* <Score /> */}
+            <Score me={me}/>
             <h1>Calendar Page</h1>
         </>
         

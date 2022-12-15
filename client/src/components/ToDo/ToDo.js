@@ -6,10 +6,9 @@ import ToDoWeekly from "./ToDoWeekly";
 import ToDoMonthly from "./ToDoMonthly";
 import ToDoYearly from "./ToDoYearly";
 import Score from "./Score";
-function ToDo(){
+function ToDo({me}){
 
     const [data, setData] = useState([])
-    const [me, setMe] = useState([])
     const [weekly, setWeekly] = useState([])
     const [monthly, setMonthly] = useState([])
     const [yearly, setYearly] = useState([])
@@ -45,11 +44,7 @@ function ToDo(){
         .then((info) => setMonthly(info))
     },[])
 
-    useEffect(() => {
-        fetch("/me")
-        .then((resp) => resp.json())
-        .then((info) => setMe(info))
-    },[])
+
 
     useEffect(() => {
         fetch("/to_do_yearlies")
