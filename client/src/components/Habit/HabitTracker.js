@@ -13,13 +13,15 @@ function HabitTracker({me}){
         .then((resp) => resp.json())
         .then((info) => setHabits(info))
       },[])
-      console.log(habits)
+
+   
     return(
         <>
             <Navbar />
-            <Score me={me}/>
             <h1 className="header" >Habits</h1>
-            <Habit habits={habits} setHabits={setHabits}/>
+            <Habit habits={habits} me={me} setHabits={setHabits}/>
+            <Score me={me}/>
+
         </>
     )
 }

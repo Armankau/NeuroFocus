@@ -44,4 +44,5 @@ Rails.application.routes.draw do
   #habits routes
   get "/habits", to: "habits#index"
   delete "/deleteHabits/:id", to: "habits#destroy"
+  post "/habit", to: "habits#create"
 end
