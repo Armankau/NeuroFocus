@@ -13,17 +13,19 @@ function ToDo({me}){
     const [monthly, setMonthly] = useState([])
     const [yearly, setYearly] = useState([])
     const [score, setScore] = useState("")
+
     function handleScoreToDo() {
         fetch(`/score/${me.id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({score: me.score + 1}),
+          body: JSON.stringify({score: me.score ++}),
         })
           .then((r) => r.json())
           .then((task) => setScore(task.score));
       }
+
 
     useEffect(() => {
         fetch("/todos")

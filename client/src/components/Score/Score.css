@@ -1,3 +1,6 @@
 .score{
     border-style: solid;
+    width: 150px;
+    text-align: center;
+    margin: 20px;
 }
