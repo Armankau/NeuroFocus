@@ -15,10 +15,8 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
       }
 
       function onDelete(deleted){
-        console.log(deleted.id)
         const newTasks = data.filter((task) => task.id != deleted.id)
         setData(newTasks)
-        console.log(data)
       }
     
     
