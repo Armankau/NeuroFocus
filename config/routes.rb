@@ -41,5 +41,6 @@ Rails.application.routes.draw do
   delete "/to_do_yearlies/:id", to: "to_do_yearlies#destroy"
   post "/yearlyToDo", to: "to_do_yearlies#create"
 
-
+  #habits routes
+  get "/habits", to: "habits#index"
 end
