@@ -5,7 +5,6 @@ import ToDo from "./ToDo";
 function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
 
     const [name, setTaskName] = useState("")
-    
     function handleClick(data) {
       handleScoreToDo()
         fetch(`/deleteToDo/${data.id}`, {

@@ -1,9 +1,10 @@
 import { useState } from "react";
 import AddHabit from "./AddHabit";
 
-function Habit({habits, setHabits, me}){
+function Habit({habits, setHabits, me, handleScoreToDo}){
     const [name, setName] = useState("")
-     
+    // const [completed, setCompleted] = useState(false)
+
     function handleClick(habit) {
           fetch(`/deleteHabits/${habit.id}`, {
             method: "DELETE",
@@ -16,11 +17,12 @@ function Habit({habits, setHabits, me}){
         setHabits(newHabits)
      }
 
+
     function handleAddHabit(e){
         e.preventDefault()
         const formData = {
            name: name,
-           user_id: me.id
+           user_id: me.id,
         }
         fetch("/habit", {
             method: "POST",
@@ -31,6 +33,20 @@ function Habit({habits, setHabits, me}){
           })
             .then((r) => r.json())
             .then((newHabit) => handleNewHabit(newHabit));
+    }
+
+    function handleComplete(habit){
+      console.log(habit)
+      handleScoreToDo()
+      // fetch(`/habit/${habit.id}`, {
+      //   method: "PATCH",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({score: me.score ++}),
+      // })
+      //   .then((r) => r.json())
+      //   .then((task) => (task.score));
     }
 
     function handleNewHabit(newHabit){
@@ -48,7 +64,7 @@ function Habit({habits, setHabits, me}){
         {habits.map((habit) => <p className="habit">
             {habit.name}
             <button onClick={() => handleClick(habit)} className="deleteHabit">Delete Habit</button>
-            <button onClick={() => handleClick(habit)} className="completeHabit">Completed</button>
+            <button onClick={() => handleComplete(habit)} className="completeHabit">Completed</button>
 
         </p>)}
         <AddHabit handleAddHabit={handleAddHabit} handleHabitName={handleHabitName} name={name}/>
