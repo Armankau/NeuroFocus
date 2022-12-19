@@ -44,6 +44,19 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
         setTaskName(e.target.value)
     }
 
+    function handleDelete(data){
+        fetch(`/deleteToDo/${data.id}`, {
+          method: "DELETE",
+        })
+        .then(() => onDelete(data));
+      }
+
+      function onDelete(deleted){
+        const newTasks = data.filter((task) => task.id != deleted.id)
+        setData(newTasks)
+      }
+
+
     return(
         <div className="ToDoTodayContainer">
             <h1 className="header" id="toDoHeader">Today</h1>
@@ -52,6 +65,7 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
                 <div id="todoData">{data.name}  
                 {/* <button className="completedTask" onClick={handleCompleted}>Mark Completed</button> */}
                 <button className="completedTask" onClick={() => handleClick(data)}>Done</button>
+                <button className="completedTask" onClick={() => handleDelete(data)}>Delete</button>
                 </div>)}
             </p>
             <AddTask handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>

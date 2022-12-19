@@ -17,6 +17,18 @@ function ToDoWeekly({weekly, me, handleScoreToDo, setWeekly}){
           setWeekly(newTasks)
         }
 
+        function handleDelete(data){
+          fetch(`/deleteToDoWeekly/${data.id}`, {
+              method: "DELETE",
+            })
+            .then(() => onDelete(data));
+          }
+    
+          function onDelete(deleted){
+            const newTasks = weekly.filter((task) => task.id != deleted.id)
+            setWeekly(newTasks)
+          }
+
     function handleAddTask(e){
         e.preventDefault()
         const formData = {
@@ -47,6 +59,8 @@ function ToDoWeekly({weekly, me, handleScoreToDo, setWeekly}){
             <p>{weekly.map((todo) => <div>
                 {todo.name}
                 <button className="completedTask" onClick={() => handleDeleteWeekly(todo)}>Done</button>
+                <button className="completedTask" onClick={() => handleDelete(todo)}>Delete</button>
+
             </div>)}</p>
             <AddWeekly handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>
         </div>
