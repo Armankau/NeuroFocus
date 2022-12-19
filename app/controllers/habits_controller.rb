@@ -21,9 +21,9 @@ class HabitsController < ApplicationController
     end
 
     def update
-        habit = Habit.find_by(params[:id])
+        habit = Habit.find(params[:id])
         if habit
-          habit.update(update_params)
+          habit.update(habit_params)
           render json: habit
         else
           render json: { error: "Habit not found" }, status: :not_found
@@ -32,6 +32,6 @@ class HabitsController < ApplicationController
     
     private
     def habit_params
-        params.permit(:name, :user_id, :id)
+        params.permit(:name, :user_id, :id, :completed)
     end
 end

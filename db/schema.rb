@@ -34,7 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_15_205855) do
   create_table "habits", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id"
-    t.boolean "completed"
+    t.integer "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_habits_on_user_id"

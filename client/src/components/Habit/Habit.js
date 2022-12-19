@@ -3,7 +3,7 @@ import AddHabit from "./AddHabit";
 
 function Habit({habits, setHabits, me, handleScoreToDo}){
     const [name, setName] = useState("")
-    // const [completed, setCompleted] = useState(false)
+    const [completed, setCompleted] = useState(0)
 
     function handleClick(habit) {
           fetch(`/deleteHabits/${habit.id}`, {
@@ -17,12 +17,12 @@ function Habit({habits, setHabits, me, handleScoreToDo}){
         setHabits(newHabits)
      }
 
-
     function handleAddHabit(e){
         e.preventDefault()
         const formData = {
            name: name,
            user_id: me.id,
+           completed: completed
         }
         fetch("/habit", {
             method: "POST",
@@ -36,18 +36,20 @@ function Habit({habits, setHabits, me, handleScoreToDo}){
     }
 
     function handleComplete(habit){
-      console.log(habit)
-      handleScoreToDo()
-      // fetch(`/habit/${habit.id}`, {
-      //   method: "PATCH",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({score: me.score ++}),
-      // })
-      //   .then((r) => r.json())
-      //   .then((task) => (task.score));
+      if (habit.completed == 0){
+        fetch(`/habit/${habit.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({completed: habit.completed + 1}),
+      })
+        .then((r) => r.json())
+        .then((habit) => console.log(habit.completed));
+      }
+      window.location.reload()
     }
+
 
     function handleNewHabit(newHabit){
       setHabits([...habits, newHabit])
@@ -61,11 +63,10 @@ function Habit({habits, setHabits, me, handleScoreToDo}){
     return(
         <div id="habitTracker">
         <h1 className="header">My Habit Tracker</h1>
-        {habits.map((habit) => <p key={habit.name} className="habit">
+        {habits.map((habit) => <p className={habit.completed === 1? "strike" : ""}>
             {habit.name}
             <button onClick={() => handleClick(habit)} className="deleteHabit">Delete Habit</button>
             <button onClick={() => handleComplete(habit)} className="completeHabit">Completed</button>
-
         </p>)}
         <AddHabit handleAddHabit={handleAddHabit} handleHabitName={handleHabitName} name={name}/>
         </div>

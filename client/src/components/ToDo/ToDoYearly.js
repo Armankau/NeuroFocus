@@ -60,7 +60,7 @@ function ToDoYearly({yearly, me, handleScoreToDo, setYearly}){
     return(
         <div className="ToDoYearlyContainer">
         <h1 className="header" id="toDoHeader">This Year</h1>
-        <p>{yearly.map((todo) => <div className="todo">
+        <p>{yearly.map((todo) => <div key={todo.id} className="todo">
             {todo.name}
             <button className="completedTask" 
             onClick={() => handleDeleteYearly(todo)}

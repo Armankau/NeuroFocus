@@ -56,7 +56,7 @@ function ToDoWeekly({weekly, me, handleScoreToDo, setWeekly}){
     return(
         <div className="ToDoWeeklyContainer">
             <h1 className="header" id="toDoHeader">This Week</h1>
-            <p>{weekly.map((todo) => <div className="todo">
+            <p>{weekly.map((todo) => <div key={todo.id} className="todo">
                 {todo.name}
                 <button className="completedTask" onClick={() => handleDeleteWeekly(todo)}>Done</button>
                 <button className="completedTask" onClick={() => handleDelete(todo)}>Delete</button>
