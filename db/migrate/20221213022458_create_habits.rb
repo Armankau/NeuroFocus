@@ -3,7 +3,7 @@ class CreateHabits < ActiveRecord::Migration[7.0]
     create_table :habits do |t|
       t.string :name
       t.belongs_to :user
-      t.belongs_to :habit_date
+      t.boolean :completed 
       t.timestamps
     end
   end

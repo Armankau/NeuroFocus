@@ -19,6 +19,16 @@ class HabitsController < ApplicationController
           render json: { errors: habit.errors.full_messages }, status: :unprocessable_entity
         end
     end
+
+    def update
+        habit = Habit.find_by(params[:id])
+        if habit
+          habit.update(update_params)
+          render json: habit
+        else
+          render json: { error: "Habit not found" }, status: :not_found
+        end
+     end
     
     private
     def habit_params
