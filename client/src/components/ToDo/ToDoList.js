@@ -62,7 +62,7 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
             <h1 className="header" id="toDoHeader">Today</h1>
             <p>
                 {data.map((data) => 
-                <div id="todoData">{data.name}  
+                <div className="todo">{data.name}  
                 {/* <button className="completedTask" onClick={handleCompleted}>Mark Completed</button> */}
                 <button className="completedTask" onClick={() => handleClick(data)}>Done</button>
                 <button className="completedTask" onClick={() => handleDelete(data)}>Delete</button>
