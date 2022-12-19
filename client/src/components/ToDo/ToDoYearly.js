@@ -45,6 +45,17 @@ function ToDoYearly({yearly, me, handleScoreToDo, setYearly}){
           setYearly(newTasks)
         }
     
+      function handleDelete(data){
+          fetch(`/to_do_yearlies//${data.id}`, {
+              method: "DELETE",
+            })
+            .then(() => onDelete(data));
+      }
+    
+          function onDelete(deleted){
+            const newTasks = yearly.filter((task) => task.id != deleted.id)
+            setYearly(newTasks)
+          }
 
     return(
         <div className="ToDoYearlyContainer">
@@ -54,6 +65,9 @@ function ToDoYearly({yearly, me, handleScoreToDo, setYearly}){
             <button className="completedTask" 
             onClick={() => handleDeleteYearly(todo)}
             >Done</button>
+             <button className="completedTask" 
+            onClick={() => handleDelete(todo)}
+            >Delete</button>
         </div>)}</p>
         <AddYearly handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>
     </div>
