@@ -1,0 +1,14 @@
+.calendar-container{
+   margin-left: 50%;
+   transform: translate(-50%);
+   padding-left: 12%;
+}
+
+.calendar{
+    background-color: bisque;
+    height: 500px;
+}
+
+.text-center{
+    text-align: center;
+}

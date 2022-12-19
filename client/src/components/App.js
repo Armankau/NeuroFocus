@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Login from "./Login/Login";
 import CreateAccount from "./CreateAccount/CreateAccount";
 import { Route, Routes } from "react-router-dom";
-import Calendar from "./Calendar";
+import MyCalendar from "./Calendar/MyCalendar";
 import Profile from "./Profile/Profile";
 import ToDo from "./ToDo/ToDo";
 import HabitTracker from "./Habit/HabitTracker";
@@ -37,7 +37,7 @@ function App() {
     <Routes>
     <Route exact path="/login" element={<Login />} />
     <Route exact path="/create_account" element={<CreateAccount />} />
-    <Route exact path="/" element={<Calendar me={me}/>} />
+    <Route exact path="/" element={<MyCalendar me={me}/>} />
     <Route exact path="/to_do" element={<ToDo me={me} handleScoreToDo={handleScoreToDo}/>} />
     <Route exact path="/habit_tracker" element={<HabitTracker me={me} handleScoreToDo={handleScoreToDo}/>} />
     <Route exact path="/profile" element={<Profile me={me}/>} />
