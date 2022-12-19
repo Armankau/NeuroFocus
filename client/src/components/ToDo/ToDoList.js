@@ -45,16 +45,16 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
     }
 
     function handleDelete(data){
-      fetch(`/deleteHabits/${data.id}`, {
-        method: "DELETE",
-      })
-      .then(() => onDelete(data));
-    }
+        fetch(`/deleteToDo/${data.id}`, {
+          method: "DELETE",
+        })
+        .then(() => onDelete(data));
+      }
 
-    function onDelete(deleted){
-        const newToDo = data.filter((habit) => habit.id != deleted.id)
-        setData(newToDo)
-    }
+      function onDelete(deleted){
+        const newTasks = data.filter((task) => task.id != deleted.id)
+        setData(newTasks)
+      }
 
 
     return(
