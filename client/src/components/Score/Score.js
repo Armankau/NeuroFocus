@@ -3,7 +3,7 @@ import "./Score.css"
 
 function Score({me}){
     return (
-        <h3 className="score">Daily Puzzle Score: {me.score}</h3>
+        <h3 className="score">Total Puzzles Solved: {me.score}</h3>
     )
 }
 
