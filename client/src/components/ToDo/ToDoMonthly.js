@@ -58,7 +58,7 @@ function ToDoMonthly({monthly, me, handleScoreToDo, setMonthly}){
     return(
         <div className="ToDoMonthlyContainer">
             <h1 className="header" id="toDoHeader">This Month</h1>
-            <p>{monthly.map((todo) => <div className="todo">
+            <p>{monthly.map((todo) => <div key={todo.id} className="todo">
                 {todo.name}
                 <button className="completedTask" onClick={() => handleDeleteMonthly(todo)}>Done</button>
                 <button className="completedTask" onClick={() => handleDelete(todo)}>Delete</button>
