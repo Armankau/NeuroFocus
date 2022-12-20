@@ -12,13 +12,13 @@ function Navbar(){
         navigate("/to_do")
     }
 
+    function handlePuzzle(){
+        navigate("/daily_puzzle")
+    }
     function handleHabit(){
         navigate("/habit_tracker")
     }
 
-    function handlePuzzle(){
-        navigate("/daily_puzzle")
-    }
     function handleProfile(){
         navigate("/profile")
     }
@@ -33,8 +33,8 @@ function Navbar(){
     <div className="navbar">
         <p onClick={handleCalendar}>Calendar</p>
         <p onClick={handleDo}>To Do</p>
-        <p onClick={handleHabit}>Habit Tracker</p>
         <p onClick={handlePuzzle}>Daily Puzzle</p>
+        <p onClick={handleHabit}>Habit Tracker</p>
         <p onClick={handleProfile}>Profile</p>
         <p onClick={logout}>Logout</p>
         <br></br>

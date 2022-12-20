@@ -18,7 +18,7 @@ function HabitTracker({me, handleScoreToDo}){
     return(
         <>
             <Navbar />
-            <Score me={me}/>
+            {/* <Score me={me}/> */}
             <h1 className="header" >Habits</h1>
             <Habit habits={habits} me={me} setHabits={setHabits} handleScoreToDo={handleScoreToDo}/>
         </>
