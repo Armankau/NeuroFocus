@@ -60,9 +60,29 @@ function Habit({habits, setHabits, me, handleScoreToDo}){
         setName(e.target.value)
     }
 
+    function handleReset(){
+      // console.log(habits)
+       const habitDone = habits.filter((habit) => habit.completed === 1)
+       for (let i = 0; i < habitDone.length; i++) {
+        console.log(habitDone[i].id)
+        fetch(`/habit/${habitDone[i].id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({completed: habitDone[i].completed - 1}),
+        })
+          .then((r) => r.json())
+          .then((data) => console.log(data));
+       }
+       window.location.reload()
+    }
+
     return(
         <div id="habitTracker">
-        <h1 className="header">My Habit Tracker</h1>
+        <h1 className="header">My Habit Tracker
+        <button onClick={handleReset}>Reset All</button>
+        </h1>
         {habits.map((habit) => <p className={habit.completed === 1? "strike" : ""}>
             {habit.name}
             <button onClick={() => handleClick(habit)} className="deleteHabit">Delete Habit</button>
