@@ -39,3 +39,11 @@
 .strike{
     text-decoration: line-through;
 }
+
+.resetBtn{
+    background-color: gray;
+    color: white;
+    padding: 5px;
+    width: 100%;
+    margin-top: 5px;
+}
