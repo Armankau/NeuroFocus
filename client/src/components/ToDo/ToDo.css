@@ -1,5 +1,4 @@
 .ToDoTodayContainer{
-    text-align: center;
     background: linear-gradient(bisque(252, 171, 183), rgb(248, 137, 156));
     padding: 1%;
     width: 20%;
@@ -13,7 +12,6 @@
     margin: 1.4%;
 }
 .ToDoMonthlyContainer{
-    text-align: center;
     background: linear-gradient(bisque(252, 171, 183), rgb(248, 137, 156));
     padding: 1%;
     width: 20%;
@@ -27,7 +25,6 @@
     border-width: 1px;
 }
 .ToDoWeeklyContainer{
-    text-align: center;
     background: linear-gradient(bisque(252, 171, 183), rgb(248, 137, 156));
     padding: 1%;
     width: 20%;
@@ -42,7 +39,6 @@
 }
 
 .ToDoYearlyContainer{
-    text-align: center;
     background: linear-gradient(bisque(252, 171, 183), rgb(248, 137, 156));
     padding: 1%;
     width: 20%;
