@@ -10,6 +10,8 @@ function CreateAccount(){
     const [sex, setSex] = useState("")
     const [name, setName] = useState("")
     const [age, setAge] = useState("")
+    const [image, setImage] = useState("")
+
     const navigate = useNavigate()
 
     function handleSubmit(e){
@@ -20,7 +22,7 @@ function CreateAccount(){
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                username, password, sex, age, name, email
+                username, password, sex, age, name, email, image
             }),
           })
             .then((r) => r.json())
@@ -54,12 +56,19 @@ function CreateAccount(){
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             />
-             <label htmlFor="email">Age:</label>
+             <label htmlFor="age">Age:</label>
             <input
             type="text"
             id="age"
             value={age}
             onChange={(e) => setAge(e.target.value)}
+            />
+            <label htmlFor="image">Image address:</label>
+            <input
+            type="text"
+            id="image"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
             />
              <label htmlFor="sex">Sex:</label>
             <input
