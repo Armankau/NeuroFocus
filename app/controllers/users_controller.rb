@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
     private
     def update_params
-      params.permit(:score)
+      params.permit(:score, :username, :name, :age, :sex)
     end
 
     def create_params

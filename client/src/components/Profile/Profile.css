@@ -30,3 +30,17 @@
     transform: translate(-50%);
 }
 
+.updateInfo{
+    background-color: pink;
+    margin-left: 10px;
+}
+
+.formProfile input{
+    margin-top: 10px;
+    text-align: center;
+    width: 150px
+}
+
+.profileBtn{
+    background-color: pink;
+}

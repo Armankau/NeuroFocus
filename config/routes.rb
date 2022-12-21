@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   patch "/score/:id", to: "users#update"
+  patch "/me/:id", to: "users#update"
+
 
   #todo daily routes
   get "/todos", to: "to_dos#index"

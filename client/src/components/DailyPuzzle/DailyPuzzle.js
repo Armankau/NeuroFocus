@@ -4,7 +4,6 @@ import "./puzzle.css"
 import { JigsawPuzzle } from 'react-jigsaw-puzzle/lib'
 import 'react-jigsaw-puzzle/lib/jigsaw-puzzle.css'
 import { useEffect, useState } from "react";
-import PuzzleForm from "./PuzzleForm";
 
 function DailyPuzzle({me, handleScoreToDo}){
     const image = "https://random.imagecdn.app/300/300"
@@ -30,10 +29,9 @@ function DailyPuzzle({me, handleScoreToDo}){
         <>
             <Navbar />
             <h1 className="header">Puzzle</h1>
-            <form onSubmit={handleDimension}> Specify Puzzle Dimensions:  
+            <form onSubmit={handleDimension} className="puzzleForm"> Specify Puzzle Dimensions:  
                 <input value={row} placeholder="specify rows" onChange={(e) => setRow(e.target.value)}/>
                 <input value={column} placeholder="specify columns" onChange={(e) => setColumn(e.target.value)}/>
-                {/* <button>Submit Dimension</button> */}
             </form>
             <img className="puzzleImage" src={image} alt="Image of the puzzle"/>
             <div className="puzzle">
@@ -41,11 +39,10 @@ function DailyPuzzle({me, handleScoreToDo}){
                 imageSrc={image}
                 rows={row}
                 columns={column}
-                // onSolved={() => alert('Solved!')}/>
                 onSolved={() => handleSolved()}/>
             </div>  
             <button className="newPuzzleBtn" onClick={handleRefresh}>Click to Load a New Puzzle</button>
-            <Score me={me}/>
+            <Score className="score" me={me}/>
         </>
     )
 }

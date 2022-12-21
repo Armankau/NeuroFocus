@@ -5,7 +5,7 @@ function ToDoWeekly({weekly, me, handleScoreToDo, setWeekly}){
     const [name, setTaskName] = useState("")
 
     function handleDeleteWeekly(data){
-        handleScoreToDo()        
+        // handleScoreToDo()        
         fetch(`/deleteToDoWeekly/${data.id}`, {
             method: "DELETE",
           })

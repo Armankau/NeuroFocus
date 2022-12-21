@@ -4,15 +4,18 @@
    float: left;
    padding-left: 15%;
    margin-top: 3%;
-   margin-right: 15%;
+   margin-right: 25%;
+   padding-top: 5%;
+   margin-bottom: 0px;
 }
 
 .puzzle{
     margin-left: 50%;
     transform: translate(-50%);
     height: 500px;
-    padding-left: 15%;
-
+    padding-left: 25%;
+    padding-top: 5%;
+    margin-bottom: 0px;
 }
 
 .heading{
@@ -22,7 +25,22 @@
 .newPuzzleBtn{
     margin-left: 50%;
     transform: translate(-50%);
-    margin-top: 5%;
     padding: 10px;
     background-color: pink;
+}
+
+.puzzleForm{
+    text-align: center;
+}
+
+
+.puzzleForm input{
+    text-align: center;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.score{
+    margin-left: 50%;
+    transform: translate(-50%);
 }

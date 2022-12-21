@@ -6,7 +6,7 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
 
     const [name, setTaskName] = useState("")
     function handleClick(data) {
-      handleScoreToDo()
+      // handleScoreToDo()
         fetch(`/deleteToDo/${data.id}`, {
           method: "DELETE",
         })

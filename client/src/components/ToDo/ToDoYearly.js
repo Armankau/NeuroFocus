@@ -33,7 +33,7 @@ function ToDoYearly({yearly, me, handleScoreToDo, setYearly}){
         setTaskName(e.target.value)
     }
     function handleDeleteYearly(data){
-        handleScoreToDo()        
+        // handleScoreToDo()        
         fetch(`/to_do_yearlies//${data.id}`, {
             method: "DELETE",
           })
