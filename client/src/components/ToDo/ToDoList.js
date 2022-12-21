@@ -6,7 +6,7 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
 
     const [name, setTaskName] = useState("")
     function handleClick(data) {
-      handleScoreToDo()
+      // handleScoreToDo()
         fetch(`/deleteToDo/${data.id}`, {
           method: "DELETE",
         })
@@ -60,7 +60,7 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
     return(
         <div className="ToDoTodayContainer">
             <h1 className="header" id="toDoHeader">Today</h1>
-            <p>
+            <p className="myToDo">
                 {data.map((data) => 
                 <div className="todo" key={data.id}>{data.name}  
                 {/* <button className="completedTask" onClick={handleCompleted}>Mark Completed</button> */}

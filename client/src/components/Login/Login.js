@@ -30,6 +30,8 @@ function Login(){
     }
 
     return (
+        <div className="loginBody">
+            <h1 className="loginHeader">Welcome to NeuroFocus</h1>
         <div className="login-div">
             <form  className="form" onSubmit={handlSubmit}>
                 <input 
@@ -49,11 +51,14 @@ function Login(){
                 type="submit"
                 value="Login"
                 className="login_buttons"
+                
                 />
-                <h3>OR</h3>
-                <button onClick={handleAccount} className="login_buttons">Create Account</button>
+                <h4>Or Register Below!</h4>
+                <button onClick={handleAccount} className="login_buttons">Register Account</button>
             </form>
         </div>
+        </div>
+
     )
 }
 

@@ -30,7 +30,7 @@ function ToDoMonthly({monthly, me, handleScoreToDo, setMonthly}){
     }
 
     function handleDeleteMonthly(data){
-        handleScoreToDo()        
+        // handleScoreToDo()        
         fetch(`/to_do_monthlies/${data.id}`, {
             method: "DELETE",
           })

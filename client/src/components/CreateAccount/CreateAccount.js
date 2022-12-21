@@ -10,6 +10,8 @@ function CreateAccount(){
     const [sex, setSex] = useState("")
     const [name, setName] = useState("")
     const [age, setAge] = useState("")
+    const [image, setImage] = useState("")
+
     const navigate = useNavigate()
 
     function handleSubmit(e){
@@ -20,7 +22,7 @@ function CreateAccount(){
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                username, password, sex, age, name, email
+                username, password, sex, age, name, email, image
             }),
           })
             .then((r) => r.json())
@@ -32,6 +34,7 @@ function CreateAccount(){
     }
     return(
       <div className="account-form-container">
+        <h1 className="accountHeader">Create an Account to get Started with NeuroFocus</h1>
         <form className="account-form" onSubmit={handleSubmit}>
             <label htmlFor="username">Username:</label>
             <input
@@ -54,12 +57,19 @@ function CreateAccount(){
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             />
-             <label htmlFor="email">Age:</label>
+             <label htmlFor="age">Age:</label>
             <input
             type="text"
             id="age"
             value={age}
             onChange={(e) => setAge(e.target.value)}
+            />
+            <label htmlFor="image">Image address:</label>
+            <input
+            type="text"
+            id="image"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
             />
              <label htmlFor="sex">Sex:</label>
             <input
@@ -75,9 +85,9 @@ function CreateAccount(){
             value={name}
             onChange={(e) => setName(e.target.value)}
             />
-            <button type="submit">Create Account</button>
-            <h1>OR</h1>
-            <button onClick={backToLogin}>Back to Login</button>
+            <button className="login_buttons" type="submit">Create Account</button>
+            <h4>OR</h4>
+            <button className="login_buttons" onClick={backToLogin}>Back to Login</button>
           </form>
       </div>
     )

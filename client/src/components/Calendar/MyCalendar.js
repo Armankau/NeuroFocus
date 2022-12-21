@@ -11,8 +11,8 @@ function MyCalendar({me}){
     return(
         <>
             <Navbar />
-            <Score me={me}/>
-            <h1>Calendar Page</h1>
+            {/* <Score me={me}/> */}
+            <h1 className="header">Calendar Page</h1>
             <div className='app'>
                 <div className='calendar-container'>
                     <Calendar 
