@@ -34,6 +34,7 @@ function CreateAccount(){
     }
     return(
       <div className="account-form-container">
+        <h1 className="accountHeader">Create an Account to get Started with NeuroFocus</h1>
         <form className="account-form" onSubmit={handleSubmit}>
             <label htmlFor="username">Username:</label>
             <input
@@ -84,9 +85,9 @@ function CreateAccount(){
             value={name}
             onChange={(e) => setName(e.target.value)}
             />
-            <button type="submit">Create Account</button>
-            <h1>OR</h1>
-            <button onClick={backToLogin}>Back to Login</button>
+            <button className="login_buttons" type="submit">Create Account</button>
+            <h4>OR</h4>
+            <button className="login_buttons" onClick={backToLogin}>Back to Login</button>
           </form>
       </div>
     )

@@ -63,10 +63,11 @@ function Profile({me, setMe}){
     return(
         <>
             <Navbar />
+            <div className="page">
             <h1 className="header">Your Profile</h1>
             <div className="profileContainer">
                 <div className="profileInformation">
-                    <h2  className="header">Personal Information</h2>
+                    <h2>Personal Information</h2>
                     <img className="profileImage" src={me.image}/>
                     <p className="info">Score: {me.score}</p>
                     <p className="info">Username: {me.username}
@@ -126,6 +127,7 @@ function Profile({me, setMe}){
                     </form>
                     </p>
                 </div>
+            </div>
             </div>
         </>
     )

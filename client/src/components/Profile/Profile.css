@@ -1,10 +1,9 @@
 .profileInformation{
     text-align: center;
-    background-color: bisque;
+    background-color: pink;
     padding: 1rem;
     width: 25rem;
     height: 30 rem;
-    opacity: .8;
     display: inline-grid;
     box-shadow: 2px 2px brown ;
     color: black;
@@ -12,16 +11,19 @@
     border-width: 1px;
     margin-left: 50%;
     transform: translate(-50%);
+    color: black;
+
 }
 
 
 .header{
-    background-color: bisque;
+    background-color: powderblue;
     margin-top: 10px;
     margin-left: 50%;
     width: 100%;
     transform: translate(-50%);
     text-align: center;
+    color: black;
 }
 
 .profileImage{
@@ -29,18 +31,22 @@
     margin-left: 50%;
     transform: translate(-50%);
 }
+.page{
+    background-size: cover;
+    height: 800px;
+}
 
 .updateInfo{
-    background-color: pink;
+    background-color: black;
     margin-left: 10px;
 }
 
 .formProfile input{
     margin-top: 10px;
     text-align: center;
-    width: 150px
+    width: 150px;
 }
 
 .profileBtn{
-    background-color: pink;
+    background-color: white;
 }

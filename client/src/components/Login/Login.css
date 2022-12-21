@@ -1,11 +1,10 @@
 
 .form{
     text-align: center;
-    background-color: bisque;
+    background-color: rgb(232, 135, 135);
     padding: 1rem;
     width: 25rem;
     height: 30 rem;
-    opacity: .8;
     display: inline-grid;
     margin: 1rem 2rem;
     box-shadow: 2px 2px brown ;
@@ -14,15 +13,31 @@
     border-width: 1px;
     margin-left: 50%;
     transform: translate(-50%);
+    opacity: 1;
 }
 
 .login-div{
-    height: 100%;
-    padding: 250px;
+    height: 650px;
+    padding-top: 7% ;
+    
+}
+.loginHeader{
+    text-align: center;
+    padding-top: 10px;
+    background-color: rgb(232, 135, 135);
+    color: white;
+}
+.loginBody{
+    background-image: url("https://i.imgur.com/tAMrzRl.png");
+    background-size: cover;
 }
 
 .form input{
     margin: 5px
 }
 
-
+.login_buttons{
+    background-color: white;
+    text-align: center;
+    height: 30px;
+}
