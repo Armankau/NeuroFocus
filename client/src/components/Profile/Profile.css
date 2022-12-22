@@ -9,10 +9,10 @@
     color: black;
     border: solid;
     border-width: 1px;
-    margin-left: 50%;
-    transform: translate(-50%);
     color: black;
-
+    float: left;
+    margin-left: 13%;
+    margin-right: 10%;
 }
 
 
@@ -48,5 +48,24 @@
 }
 
 .profileBtn{
+    background-color: white;
+}
+
+.profileScores{
+    text-align: center;
+    background-color: pink;
+    padding: 1rem;
+    width: 25rem;
+    height: 30 rem;
+    display: inline-grid;
+    box-shadow: 2px 2px brown ;
+    color: black;
+    border: solid;
+    border-width: 1px;
+    color: black;
+    margin-right: 10px;
+}
+
+.profileScores h3{
     background-color: white;
 }

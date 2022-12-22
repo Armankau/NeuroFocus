@@ -69,7 +69,6 @@ function Profile({me, setMe}){
                 <div className="profileInformation">
                     <h2>Personal Information</h2>
                     <img className="profileImage" src={me.image}/>
-                    <p className="info">Score: {me.score}</p>
                     <p className="info">Username: {me.username}
                     <form className="formProfile" onSubmit={handleUsername}>
                         <input 
@@ -127,6 +126,10 @@ function Profile({me, setMe}){
                     </form>
                     </p>
                 </div>
+            </div>
+            <div className="profileScores">
+                <h2>Your Scores</h2>
+                <h3>Total Puzzles Solved: {me.score}</h3>
             </div>
             </div>
         </>
