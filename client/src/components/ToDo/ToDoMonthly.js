@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddMonthly from "./AddMonthly";
 
-function ToDoMonthly({monthly, me, handleScoreToDo, setMonthly}){
+function ToDoMonthly({monthly, me, handleTaskScore, setMonthly}){
     const [name, setTaskName] = useState("")
 
     function handleAddTask(e){
@@ -30,7 +30,7 @@ function ToDoMonthly({monthly, me, handleScoreToDo, setMonthly}){
     }
 
     function handleDeleteMonthly(data){
-        // handleScoreToDo()        
+        handleTaskScore()        
         fetch(`/to_do_monthlies/${data.id}`, {
             method: "DELETE",
           })

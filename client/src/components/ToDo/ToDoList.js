@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import AddTask from "./AddTask";
 import ToDo from "./ToDo";
 
-function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
+function ToDoList({data, me, setData, setMe, handleTaskScore}){
 
     const [name, setTaskName] = useState("")
+    
+
     function handleClick(data) {
-      // handleScoreToDo()
+      handleTaskScore()
         fetch(`/deleteToDo/${data.id}`, {
           method: "DELETE",
         })
@@ -58,6 +60,8 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
 
 
     return(
+      <>
+      <h2 className="score">Total Tasks Completed: {me.task_score}</h2>
         <div className="ToDoTodayContainer">
             <h1 className="header" id="toDoHeader">Today</h1>
             <p className="myToDo">
@@ -70,6 +74,7 @@ function ToDoList({data, me, setData, score, setScore, handleScoreToDo}){
             </p>
             <AddTask handleAddTask={handleAddTask} handleTaskName={handleTaskName} name={name}/>
         </div>
+        </>
        
     )
 }

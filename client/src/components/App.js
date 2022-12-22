@@ -38,7 +38,7 @@ function App() {
     <Route exact path="/login" element={<Login />} />
     <Route exact path="/create_account" element={<CreateAccount />} />
     <Route exact path="/" element={<MyCalendar me={me}/>} />
-    <Route exact path="/to_do" element={<ToDo me={me} handleScoreToDo={handleScoreToDo}/>} />
+    <Route exact path="/to_do" element={<ToDo me={me} handleScoreToDo={handleScoreToDo}  setMe={setMe}/>} />
     <Route exact path="/habit_tracker" element={<HabitTracker me={me} handleScoreToDo={handleScoreToDo}/>} />
     <Route exact path="/profile" element={<Profile me={me} score={score} setMe={setMe}/>} />
     <Route exact path="/daily_puzzle" element={<DailyPuzzle me={me} handleScoreToDo={handleScoreToDo} setMe={setMe}/>} />
