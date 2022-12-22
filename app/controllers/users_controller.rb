@@ -30,10 +30,10 @@ class UsersController < ApplicationController
 
     private
     def update_params
-      params.permit(:score, :username, :name, :age, :sex)
+      params.permit(:score, :username, :name, :age, :sex, :task_score, :habit_score)
     end
 
     def create_params
-        params.permit(:name, :age, :username, :password, :email, :sex, :score, :image)
+      params.permit(:name, :age, :username, :password, :email, :sex, :score, :image, :task_score, :habit_score)
     end
 end

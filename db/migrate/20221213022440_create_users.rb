@@ -9,6 +9,8 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :email
       t.string :sex 
       t.integer :score
+      t.integer :task_score
+      t.integer :habit_score
       t.timestamps
     end
   end

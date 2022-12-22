@@ -21,6 +21,8 @@ function Profile({me, setMe}){
           .then((data) => setMe(data));
       }
 
+      console.log(me)
+
     function handleName(e) {
         e.preventDefault()
         fetch(`/me/${me.id}`, {

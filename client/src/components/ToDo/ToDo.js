@@ -6,14 +6,30 @@ import ToDoWeekly from "./ToDoWeekly";
 import ToDoMonthly from "./ToDoMonthly";
 import ToDoYearly from "./ToDoYearly";
 import Score from "../Score/Score";
-function ToDo({me, handleScoreToDo}){
+
+function ToDo({me, handleScoreToDo, setMe}){
 
     const [data, setData] = useState([])
     const [weekly, setWeekly] = useState([])
     const [monthly, setMonthly] = useState([])
     const [yearly, setYearly] = useState([])
 
- 
+    const [task_score, setTaskScore] = useState()
+
+    function handleTaskScore(){
+      const data = {
+        task_score: me.task_score + 1
+    }
+    fetch(`/me/${me.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((r) => r.json())
+      .then((me) => setMe(me));
+    }
 
     useEffect(() => {
         fetch("/todos")
@@ -50,7 +66,10 @@ function ToDo({me, handleScoreToDo}){
                 data={data} 
                 setData={setData} 
                 me={me} 
-                handleScoreToDo={handleScoreToDo}/>
+                handleScoreToDo={handleScoreToDo}
+                setMe={setMe}
+                handleTaskScore={handleTaskScore}
+                />
             <ToDoWeekly 
                 setWeekly={setWeekly}
                 weekly={weekly} 
