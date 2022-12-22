@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddYearly from "./AddYearly";
 
-function ToDoYearly({yearly, me, handleScoreToDo, setYearly}){
+function ToDoYearly({yearly, me, handleTaskScore, setYearly}){
 
     const [name, setTaskName] = useState("")
 
@@ -33,7 +33,7 @@ function ToDoYearly({yearly, me, handleScoreToDo, setYearly}){
         setTaskName(e.target.value)
     }
     function handleDeleteYearly(data){
-        // handleScoreToDo()        
+        handleTaskScore()        
         fetch(`/to_do_yearlies//${data.id}`, {
             method: "DELETE",
           })

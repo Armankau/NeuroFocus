@@ -74,17 +74,17 @@ function ToDo({me, handleScoreToDo, setMe}){
                 setWeekly={setWeekly}
                 weekly={weekly} 
                 me={me} 
-                handleScoreToDo={handleScoreToDo}/>
+                handleTaskScore={handleTaskScore}/>
             <ToDoMonthly 
                 setMonthly={setMonthly}
                 monthly={monthly} 
                 me={me}  
-                handleScoreToDo={handleScoreToDo}/>
+                handleTaskScore={handleTaskScore}/>
             <ToDoYearly 
                 setYearly={setYearly}
                 yearly={yearly} 
                 me={me} 
-                handleScoreToDo={handleScoreToDo}/>
+                handleTaskScore={handleTaskScore}/>
         </>
 
     )

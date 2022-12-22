@@ -1,12 +1,12 @@
 import { useState } from "react";
 import AddWeekly from "./AddWeekly";
 
-function ToDoWeekly({weekly, me, handleScoreToDo, setWeekly}){
+function ToDoWeekly({weekly, me, handleTaskScore, setWeekly}){
     const [name, setTaskName] = useState("")
 
     function handleDeleteWeekly(data){
-        // handleScoreToDo()        
-        fetch(`/deleteToDoWeekly/${data.id}`, {
+      handleTaskScore()       
+      fetch(`/deleteToDoWeekly/${data.id}`, {
             method: "DELETE",
           })
           .then(() => onDelete(data));
