@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   patch "/score/:id", to: "users#update"
   patch "/me/:id", to: "users#update"
 
-
   #todo daily routes
   get "/todos", to: "to_dos#index"
   delete "/deleteToDo/:id", to: "to_dos#destroy"
@@ -49,4 +48,8 @@ Rails.application.routes.draw do
   post "/habit", to: "habits#create"
   patch "/habit/:id", to: "habits#update"
 
+  #calendar routes
+  post "/event", to: "calendars#create"
+  get "/events", to: "calendars#index"
+  
 end

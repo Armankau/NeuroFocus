@@ -12,3 +12,12 @@
 .text-center{
     text-align: center;
 }
+
+.eventForm{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.event{
+    text-align: center;
+}
