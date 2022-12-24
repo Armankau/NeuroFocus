@@ -22,7 +22,6 @@ function MyCalendar({me}){
       },[])
 
     function handleCalendarEvent(e){
-        e.preventDefault()
         const formData = {
            event_name: event_name,
            user_id: me.id,
@@ -55,10 +54,10 @@ function MyCalendar({me}){
                     {date.toDateString()}
                 </p> */}
              </div>
-             <Event events={events} date={date}
+             <Event events={events} setEvents={setEvents} date={date}
              />
              <form className="eventForm" onSubmit={handleCalendarEvent}>
-                <h1 className="header">Select a Date and Create a New Event</h1>
+                <h3 className="header">Create a new event for the selected date:</h3>
                 <input type="text" placeholder="Enter event name..." value={event_name} onChange={(e) => handleEvent(e)}/>
                 <input type="text" value={date.toJSON().slice(0,10)} onChange={(e) => e.target.value}/>
                 <input type="submit" value="Create a new event"/>

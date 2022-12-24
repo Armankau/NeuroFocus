@@ -51,5 +51,7 @@ Rails.application.routes.draw do
   #calendar routes
   post "/event", to: "calendars#create"
   get "/events", to: "calendars#index"
-  
+  delete "/deleteEvent/:id", to: "calendars#destroy"
+
+
 end

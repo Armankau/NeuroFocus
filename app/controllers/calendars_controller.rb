@@ -15,6 +15,12 @@ class CalendarsController < ApplicationController
         end
     end
 
+    def destroy
+        event = Calendar.find(params[:id])
+        event.destroy
+        head :no_content
+    end
+
     private
 
     def event_params

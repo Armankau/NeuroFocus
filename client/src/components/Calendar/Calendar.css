@@ -15,9 +15,15 @@
 
 .eventForm{
     text-align: center;
-    padding-top: 20px;
 }
 
 .event{
     text-align: center;
+}
+
+.eventButton{
+    text-align: center;
+    width: 100px;
+    margin-left: 10px;
+    background-color: pink;
 }
