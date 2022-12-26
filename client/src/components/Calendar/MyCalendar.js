@@ -16,9 +16,14 @@ function MyCalendar({me}){
     }
 
     useEffect(() => {
-        fetch("/events")
-        .then((resp) => resp.json())
-        .then((data) => setEvents(data))
+        if (me.error) {
+            console.log(me.error)
+        }
+        else {
+            fetch("/events")
+            .then((resp) => resp.json())        
+            .then((data) => setEvents(data))
+        }
       },[])
 
     function handleCalendarEvent(e){
@@ -37,6 +42,7 @@ function MyCalendar({me}){
             .then((r) => r.json())
             .then((data) => setEvents(data));
     }
+
     
     return(
         <>

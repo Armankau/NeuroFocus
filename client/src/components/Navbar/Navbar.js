@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom"
 import "./Navbar.css"
 function Navbar(){
+    const [me, setMe] = useState([])
     const navigate = useNavigate()
+
+    useEffect(() => {
+        fetch("/me")
+        .then((resp) => resp.json())
+        .then((info) => setMe(info))
+      },[])
 
     function handleCalendar(){
         navigate("/")
@@ -15,19 +22,30 @@ function Navbar(){
     function handlePuzzle(){
         navigate("/daily_puzzle")
     }
+
     function handleHabit(){
         navigate("/habit_tracker")
     }
 
     function handleProfile(){
-        navigate("/profile")
+        if (me.error){
+            navigate("/login")
+        }
+        else{
+            navigate("/profile")
+        }
     }
 
     function logout(){
         fetch("/logout", {
         method: "DELETE",
-        }).then(navigate("/login"));
+        }).then((data) => onLogout(data));
     }
+  
+  function onLogout(data){
+    navigate("/login")
+  }
+
     
     return(
     <div className="navbar">
