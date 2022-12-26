@@ -21,15 +21,9 @@ function Login({me, setMe}){
             body: JSON.stringify(formData),
           })
             .then((r) => r.json())
-            .then((data) => {
-                if (data.errors) {
-                    console.log(data.errors)
-                }
-                else {
-                    setMe(data)
-                    navigate("/")
-                }
-            }
+            .then((me) => {
+                    setMe(me)
+                    navigate("/")}
             )
         }
 

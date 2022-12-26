@@ -22,16 +22,15 @@ function Event({events, setEvents, date}){
 
 
     return(
-        <>
+      
+        <div>
             <h3 className="header">Your events for {date.toJSON().slice(0,10)}:</h3>
             <div className="event">
-            {selected.map((data) => <p>
+            {selected.map((data) => <p key={data.id}>
                 {data.event_name}
             <button onClick={() => handleDeleteEvent(data)} className="eventButton">Delete Event</button>
-            </p>)}
-            </div>
-            
-        </>
+            </p>)}</div>   
+        </div>
     )
     
 }

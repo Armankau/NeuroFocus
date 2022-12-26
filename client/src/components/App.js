@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Login from "./Login/Login";
 import CreateAccount from "./CreateAccount/CreateAccount";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import MyCalendar from "./Calendar/MyCalendar";
 import Profile from "./Profile/Profile";
 import ToDo from "./ToDo/ToDo";
@@ -15,10 +15,17 @@ function App() {
   const [me, setMe] = useState([])
   const [score, setScore] = useState("")
 
+  const navigate = useNavigate()
+  
   useEffect(() => {
     fetch("/me")
     .then((resp) => resp.json())
-    .then((info) => setMe(info))
+    .then(data => {
+      if (["not authorized", "User not found"].includes(data.error)) {
+          navigate("/login")
+      }
+      else setMe(data)
+  })
   },[])
 
   function handleScoreToDo() {

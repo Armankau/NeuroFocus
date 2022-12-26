@@ -5,6 +5,12 @@ function Navbar(){
     const [me, setMe] = useState([])
     const navigate = useNavigate()
 
+    useEffect(() => {
+        fetch("/me")
+        .then((resp) => resp.json())
+        .then((info) => setMe(info))
+      },[])
+
     function handleCalendar(){
         navigate("/")
     }
@@ -16,19 +22,19 @@ function Navbar(){
     function handlePuzzle(){
         navigate("/daily_puzzle")
     }
+
     function handleHabit(){
         navigate("/habit_tracker")
     }
 
     function handleProfile(){
-        navigate("/profile")
+        if (me.error){
+            navigate("/login")
+        }
+        else{
+            navigate("/profile")
+        }
     }
-
-    useEffect(() => {
-        fetch("/me")
-        .then((resp) => resp.json())
-        .then((info) => setMe(info))
-      },[])
 
     function logout(){
         fetch("/logout", {
