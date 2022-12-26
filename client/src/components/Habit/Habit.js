@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddHabit from "./AddHabit";
 
-function Habit({habits, setHabits, me, handleScoreToDo}){
+function Habit({habits, setHabits, me, setMe, handleScoreToDo}){
     const [name, setName] = useState("")
     const [completed, setCompleted] = useState(0)
 
@@ -35,8 +35,24 @@ function Habit({habits, setHabits, me, handleScoreToDo}){
             .then((newHabit) => handleNewHabit(newHabit));
     }
 
+    function handleHabitScore(){
+      const data = {
+        habit_score: me.habit_score + 1
+    }
+    fetch(`/me/${me.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((r) => r.json())
+      .then((me) => setMe(me));
+    }
+
     function handleComplete(habit){
       if (habit.completed == 0){
+        handleHabitScore()
         fetch(`/habit/${habit.id}`, {
         method: "PATCH",
         headers: {
@@ -79,6 +95,7 @@ function Habit({habits, setHabits, me, handleScoreToDo}){
     }
 
     return(
+      <>
         <div id="habitTracker">
         <h1 className="header">My Habit Tracker
         </h1>
@@ -90,6 +107,8 @@ function Habit({habits, setHabits, me, handleScoreToDo}){
         <AddHabit handleAddHabit={handleAddHabit} handleHabitName={handleHabitName} name={name}/>
         <button className="resetBtn" onClick={handleReset}>Reset All</button>
         </div>
+        <h3 className="score">Score: {me.habit_score}</h3>
+        </>
     )
 }
 

@@ -133,6 +133,7 @@ function Profile({me, setMe}){
                 <h2>Your Scores</h2>
                 <h3>Total Puzzles Solved: {me.score}</h3>
                 <h3>Total Tasks Completed: {me.task_score}</h3>
+                <h3>Total Habits Completed: {me.habit_score}</h3>
             </div>
             </div>
         </>
