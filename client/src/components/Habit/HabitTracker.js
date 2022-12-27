@@ -1,6 +1,5 @@
 import Navbar from "../Navbar/Navbar";
 import React, { useEffect, useState } from "react";
-import Score from "../Score/Score";
 import "./Habit.css"
 import Habit from "./Habit";
 
@@ -13,7 +12,6 @@ function HabitTracker({me, handleScoreToDo, setMe}){
         .then((resp) => resp.json())
         .then((info) => setHabits(info))
       },[])
-
    
     return(
         <>

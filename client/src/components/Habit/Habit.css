@@ -48,3 +48,28 @@
     margin-top: 5px;
 }
 
+.bar{
+    margin-left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    background-color: powderblue;
+    border-style: solid;
+    border-width: 4px;
+    padding-top: .7%;
+    box-shadow: 2px 2px rgb(60, 217, 238) ;
+
+
+}
+
+.noBar{
+    margin-left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    background-color: pink;
+    border-style: solid;
+    border-width: 3px;
+    box-shadow: 2px 2px rgb(246, 102, 126) ;
+    padding-top: .7%;
+}
+
+

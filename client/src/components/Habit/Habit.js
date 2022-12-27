@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddHabit from "./AddHabit";
+import Progress from "./Progress";
 
 function Habit({habits, setHabits, me, setMe, handleScoreToDo}){
 
@@ -53,7 +54,6 @@ function Habit({habits, setHabits, me, setMe, handleScoreToDo}){
 
 
 
-
     function handleComplete(habit){
       if (habit.completed == 0){
         handleHabitScore()
@@ -71,7 +71,7 @@ function Habit({habits, setHabits, me, setMe, handleScoreToDo}){
         .then((data) => onCompleted(data));
       }
     }
-    
+
     function onCompleted(data){
       const updatedHabits = habits.map(
         habit =>
@@ -142,7 +142,8 @@ function Habit({habits, setHabits, me, setMe, handleScoreToDo}){
         <AddHabit handleAddHabit={handleAddHabit} handleHabitName={handleHabitName} name={name}/>
         <button className="resetBtn" onClick={handleReset}>Reset All</button>
         </div>
-        <h3 className="score">Score: {me.habit_score}</h3>
+        <h3 className="score">Total Habits Completed: {me.habit_score}</h3>
+        <Progress habits={habits}/>
         </>
     )
 }
