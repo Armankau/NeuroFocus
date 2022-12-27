@@ -20,9 +20,7 @@ function Profile({me, setMe}){
           .then((r) => r.json())
           .then((data) => setMe(data));
       }
-
-      console.log(me)
-
+      
     function handleName(e) {
         e.preventDefault()
         fetch(`/me/${me.id}`, {
@@ -71,7 +69,7 @@ function Profile({me, setMe}){
                 <div className="profileInformation">
                     <h2>Personal Information</h2>
                     <img className="profileImage" src={me.image}/>
-                    <p className="info">Username: {me.username}
+                    <div className="info">Username: {me.username}
                     <form className="formProfile" onSubmit={handleUsername}>
                         <input 
                         type="text" placeholder="Enter New Username..."
@@ -84,8 +82,8 @@ function Profile({me, setMe}){
                         className="profileBtn"
                         />
                     </form>
-                     </p>
-                    <p className="info">Name: {me.name} 
+                     </div>
+                    <div className="info">Name: {me.name} 
                     <form className="formProfile" onSubmit={handleName}>
                         <input 
                         type="text" placeholder="Enter New Name..."
@@ -98,8 +96,8 @@ function Profile({me, setMe}){
                         className="profileBtn"
                         />
                     </form>
-                    </p>
-                    <p className="info">Age: {me.age}
+                    </div>
+                    <div className="info">Age: {me.age}
                     <form className="formProfile" onSubmit={handleAge}>
                         <input 
                         type="text" placeholder="Enter New Age..."
@@ -112,8 +110,8 @@ function Profile({me, setMe}){
                         className="profileBtn"
                         />
                     </form> 
-                    </p>
-                    <p className="info">Sex: {me.sex} 
+                    </div>
+                    <div className="info">Sex: {me.sex} 
                     <form className="formProfile" onSubmit={handleSex}>
                         <input 
                         type="text" placeholder="Enter New Age..."
@@ -126,7 +124,7 @@ function Profile({me, setMe}){
                         className="profileBtn"
                         />
                     </form>
-                    </p>
+                    </div>
                 </div>
             </div>
             <div className="profileScores">

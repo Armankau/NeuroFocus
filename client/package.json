@@ -38,6 +38,8 @@
   },
   "proxy": "http://localhost:3000",
   "dependencies": {
+    "bootstrap": "^5.2.3",
+    "react-bootstrap": "^2.7.0",
     "react-calendar": "^4.0.0",
     "react-jigsaw-puzzle": "^1.0.4"
   }

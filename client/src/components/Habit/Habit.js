@@ -1,7 +1,9 @@
 import { useState } from "react";
 import AddHabit from "./AddHabit";
+import Progress from "./Progress";
 
 function Habit({habits, setHabits, me, setMe, handleScoreToDo}){
+
     const [name, setName] = useState("")
     const [completed, setCompleted] = useState(0)
 
@@ -50,22 +52,37 @@ function Habit({habits, setHabits, me, setMe, handleScoreToDo}){
       .then((me) => setMe(me));
     }
 
+
+
     function handleComplete(habit){
       if (habit.completed == 0){
         handleHabitScore()
+        const data = {
+          completed: habit.completed + 1
+        }
         fetch(`/habit/${habit.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({completed: habit.completed + 1}),
+        body: JSON.stringify(data),
       })
         .then((r) => r.json())
-        .then((habit) => console.log(habit.completed));
+        .then((data) => onCompleted(data));
       }
-      window.location.reload()
     }
 
+    function onCompleted(data){
+      const updatedHabits = habits.map(
+        habit =>
+        {
+          if (habit.id == data.id) {
+            return {...habit, completed: habit.completed + 1}
+          }
+          return habit
+        })
+      setHabits(updatedHabits)
+    }
 
     function handleNewHabit(newHabit){
       setHabits([...habits, newHabit])
@@ -80,7 +97,7 @@ function Habit({habits, setHabits, me, setMe, handleScoreToDo}){
       // console.log(habits)
        const habitDone = habits.filter((habit) => habit.completed === 1)
        for (let i = 0; i < habitDone.length; i++) {
-        console.log(habitDone[i].id)
+        // console.log(habitDone[i].id)
         fetch(`/habit/${habitDone[i].id}`, {
           method: "PATCH",
           headers: {
@@ -89,10 +106,28 @@ function Habit({habits, setHabits, me, setMe, handleScoreToDo}){
           body: JSON.stringify({completed: habitDone[i].completed - 1}),
         })
           .then((r) => r.json())
-          .then((data) => console.log(data));
+          .then((data) => 
+            console.log([data])
+          );
        }
-       window.location.reload()
-    }
+       window.location.reload(false)
+      }
+
+
+    // function onReset(data){
+    //   let thisArray = new Array()
+    //   thisArray.push(data)
+    //   console.log(thisArray)
+    //   const updatedHabits = habits.map(
+    //     habit =>
+    //     {
+    //       if (habit.id == data.id) {
+    //         return {...habit, completed: habit.completed - 1}
+    //       }
+    //       return habit
+    //     })
+    //   setHabits(updatedHabits)
+    // }
 
     return(
       <>
@@ -107,7 +142,8 @@ function Habit({habits, setHabits, me, setMe, handleScoreToDo}){
         <AddHabit handleAddHabit={handleAddHabit} handleHabitName={handleHabitName} name={name}/>
         <button className="resetBtn" onClick={handleReset}>Reset All</button>
         </div>
-        <h3 className="score">Score: {me.habit_score}</h3>
+        <h3 className="score">Total Habits Completed: {me.habit_score}</h3>
+        <Progress habits={habits}/>
         </>
     )
 }

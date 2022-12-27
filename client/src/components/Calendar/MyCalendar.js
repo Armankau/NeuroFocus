@@ -8,7 +8,7 @@ import 'react-calendar/dist/Calendar.css';
 
 function MyCalendar({me}){
     const [date, setDate] = useState(new Date());
-    const [event_name, setEvent] = useState("")
+    const [event_name, setEvent] = useState([])
     const [events, setEvents] = useState([])
 
     function handleEvent(e){
@@ -16,17 +16,13 @@ function MyCalendar({me}){
     }
 
     useEffect(() => {
-        if (me.error) {
-            console.log(me.error)
-        }
-        else {
             fetch("/events")
             .then((resp) => resp.json())        
             .then((data) => setEvents(data))
-        }
-      },[])
+        },[])
 
     function handleCalendarEvent(e){
+        e.preventDefault()
         const formData = {
            event_name: event_name,
            user_id: me.id,
@@ -40,7 +36,7 @@ function MyCalendar({me}){
             body: JSON.stringify(formData),
           })
             .then((r) => r.json())
-            .then((data) => setEvents(data));
+            .then((data) => setEvents([...events, data]));
     }
 
     
