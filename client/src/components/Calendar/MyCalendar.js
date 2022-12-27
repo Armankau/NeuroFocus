@@ -49,17 +49,16 @@ function MyCalendar({me}){
                 <div className='calendar-container'>
                     <Calendar 
                     onChange={setDate} value={date}
+                    
                     />
-                </div>
-                {/* <p className='text-center'>
-                    <span className='bold'>Selected Date:</span>{' '}
-                    {date.toDateString()}
-                </p> */}
-             </div>
-             <Event events={events} setEvents={setEvents} date={date}
+                    <Event events={events} setEvents={setEvents} date={date}
              />
+                </div>
+             </div>
+             {/* <Event events={events} setEvents={setEvents} date={date}
+             /> */}
              <form className="eventForm" onSubmit={handleCalendarEvent}>
-                <h3 className="header">Create a new event for the selected date:</h3>
+                <h3>Create a new event for the selected date:</h3>
                 <input type="text" placeholder="Enter event name..." value={event_name} onChange={(e) => handleEvent(e)}/>
                 <input type="text" value={date.toJSON().slice(0,10)} onChange={(e) => e.target.value}/>
                 <input type="submit" value="Create a new event"/>

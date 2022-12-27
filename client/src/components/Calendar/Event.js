@@ -23,8 +23,8 @@ function Event({events, setEvents, date}){
 
     return(
       
-        <div>
-            <h3 className="header">Your events for {date.toJSON().slice(0,10)}:</h3>
+        <div className="events">
+            <h3>Your events for {date.toJSON().slice(0,10)}:</h3>
             <div className="event">
             {selected.map((data) => <p key={data.id}>
                 {data.event_name}

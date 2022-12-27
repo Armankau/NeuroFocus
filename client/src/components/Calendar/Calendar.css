@@ -1,6 +1,7 @@
 .calendar-container{
-   margin-left: 50%;
-   transform: translate(-50%);
+   /* margin-left: 50%;
+   transform: translate(-50%); */
+   float: left;
    padding-left: 12%;
 }
 
@@ -28,3 +29,6 @@
     background-color: pink;
 }
 
+.events{
+    float: left;
+}
