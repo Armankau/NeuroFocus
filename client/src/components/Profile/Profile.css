@@ -1,6 +1,6 @@
 .profileInformation{
     text-align: center;
-    background-color: pink;
+    background-color: white;
     padding: 1rem;
     width: 25rem;
     height: 30 rem;
@@ -17,13 +17,10 @@
 
 
 .header{
-    background-color: powderblue;
-    margin-top: 10px;
-    margin-left: 50%;
-    width: 100%;
-    transform: translate(-50%);
+    background-color: #5A7184 ;
+    margin-top: 0px;
     text-align: center;
-    color: black;
+    color: #D9D9D9;
 }
 
 .profileImage{
@@ -43,6 +40,7 @@
 
 .formProfile input{
     margin-top: 10px;
+    margin-bottom: 10px;
     text-align: center;
     width: 150px;
 }
@@ -53,7 +51,7 @@
 
 .profileScores{
     text-align: center;
-    background-color: pink;
+    background-color: white;
     padding: 1rem;
     width: 25rem;
     height: 30 rem;

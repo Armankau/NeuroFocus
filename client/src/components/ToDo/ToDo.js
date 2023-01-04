@@ -60,8 +60,7 @@ function ToDo({me, handleScoreToDo, setMe}){
     return(
         <>
             <Navbar />
-            {/* <Score me={me}/> */}
-            <h1 className="header">My To Do List</h1>
+            <h1 className="header">My To-Do list</h1>
             <ToDoList 
                 data={data} 
                 setData={setData} 

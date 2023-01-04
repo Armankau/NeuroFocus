@@ -43,7 +43,7 @@ function MyCalendar({me}){
         <>
             <Navbar />
             {/* <Score me={me}/> */}
-            <h1 className="header">Calendar Page</h1>
+            <h1 className="header">Your Calendar</h1>
             <div className='app'>
                 <div className='calendar-container'>
                     <Calendar 
