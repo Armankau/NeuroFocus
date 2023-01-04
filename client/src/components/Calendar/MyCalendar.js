@@ -4,7 +4,6 @@ import Score from "../Score/Score";
 import Event from "./Event";
 import Calendar from 'react-calendar';
 import "./Calendar.css"
-import 'react-calendar/dist/Calendar.css';
 
 function MyCalendar({me}){
     const [date, setDate] = useState(new Date());
@@ -44,19 +43,17 @@ function MyCalendar({me}){
         <>
             <Navbar />
             {/* <Score me={me}/> */}
-            <h1 className="header">Calendar Page</h1>
+            <h1 className="header">Your Calendar</h1>
             <div className='app'>
                 <div className='calendar-container'>
                     <Calendar 
                     onChange={setDate} value={date}
                     
                     />
-                    <Event events={events} setEvents={setEvents} date={date}
-             />
                 </div>
              </div>
-             {/* <Event events={events} setEvents={setEvents} date={date}
-             /> */}
+             <Event events={events} setEvents={setEvents} date={date}
+             />
              <form className="eventForm" onSubmit={handleCalendarEvent}>
                 <h3>Create a new event for the selected date:</h3>
                 <input type="text" placeholder="Enter event name..." value={event_name} onChange={(e) => handleEvent(e)}/>

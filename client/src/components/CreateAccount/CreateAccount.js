@@ -34,10 +34,11 @@ function CreateAccount(){
     }
     return(
       <div className="account-form-container">
-        <h1 className="accountHeader">Create an Account to get Started with NeuroFocus</h1>
         <form className="account-form" onSubmit={handleSubmit}>
+          <h1>Create an Account below:</h1>
             <label htmlFor="username">Username:</label>
             <input
+            placeholder="Enter your username..."
             type="text"
             id="username"
             value={username}
@@ -47,6 +48,8 @@ function CreateAccount(){
             <input
             type="password"
             id="password"
+            placeholder="Enter your password..."
+
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             />
@@ -55,6 +58,8 @@ function CreateAccount(){
             type="text"
             id="email"
             value={email}
+            placeholder="Enter your email..."
+
             onChange={(e) => setEmail(e.target.value)}
             />
              <label htmlFor="age">Age:</label>
@@ -62,11 +67,15 @@ function CreateAccount(){
             type="text"
             id="age"
             value={age}
+            placeholder="Enter your age..."
+
             onChange={(e) => setAge(e.target.value)}
             />
             <label htmlFor="image">Image address:</label>
             <input
             type="text"
+            placeholder="Enter your image address..."
+
             id="image"
             value={image}
             onChange={(e) => setImage(e.target.value)}
@@ -74,6 +83,7 @@ function CreateAccount(){
              <label htmlFor="sex">Sex:</label>
             <input
             type="text"
+            placeholder="Enter your sex..."
             id="sex"
             value={sex}
             onChange={(e) => setSex(e.target.value)}
@@ -83,11 +93,13 @@ function CreateAccount(){
             type="text"
             id="name"
             value={name}
+            placeholder="Enter your name..."
+
             onChange={(e) => setName(e.target.value)}
             />
-            <button className="login_buttons" type="submit">Create Account</button>
+            <button className="account_buttons" type="submit">Create an account</button>
             <h4>OR</h4>
-            <button className="login_buttons" onClick={backToLogin}>Back to Login</button>
+            <button className="account_buttons" onClick={backToLogin}>Go back to login</button>
           </form>
       </div>
     )
