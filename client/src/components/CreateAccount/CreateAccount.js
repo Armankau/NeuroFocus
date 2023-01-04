@@ -35,8 +35,8 @@ function CreateAccount(){
     return(
       <div className="account-form-container">
         <form className="account-form" onSubmit={handleSubmit}>
-          <h1>Create an Account below:</h1>
-            <label htmlFor="username">Username:</label>
+          <h1 className="accountHeader">Create an Account:</h1>
+            <label htmlFor="username"></label>
             <input
             placeholder="Enter your username..."
             type="text"
@@ -44,7 +44,7 @@ function CreateAccount(){
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             />
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password"></label>
             <input
             type="password"
             id="password"
@@ -53,7 +53,7 @@ function CreateAccount(){
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             />
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email"></label>
             <input
             type="text"
             id="email"
@@ -62,7 +62,7 @@ function CreateAccount(){
 
             onChange={(e) => setEmail(e.target.value)}
             />
-             <label htmlFor="age">Age:</label>
+             <label htmlFor="age"></label>
             <input
             type="text"
             id="age"
@@ -71,7 +71,7 @@ function CreateAccount(){
 
             onChange={(e) => setAge(e.target.value)}
             />
-            <label htmlFor="image">Image address:</label>
+            <label htmlFor="image"></label>
             <input
             type="text"
             placeholder="Enter your image address..."
@@ -80,7 +80,7 @@ function CreateAccount(){
             value={image}
             onChange={(e) => setImage(e.target.value)}
             />
-             <label htmlFor="sex">Sex:</label>
+             <label htmlFor="sex"></label>
             <input
             type="text"
             placeholder="Enter your sex..."
@@ -88,7 +88,7 @@ function CreateAccount(){
             value={sex}
             onChange={(e) => setSex(e.target.value)}
             />
-             <label htmlFor="name">Name:</label>
+             <label htmlFor="name"></label>
             <input
             type="text"
             id="name"
@@ -98,7 +98,6 @@ function CreateAccount(){
             onChange={(e) => setName(e.target.value)}
             />
             <button className="account_buttons" type="submit">Create an account</button>
-            <h4>OR</h4>
             <button className="account_buttons" onClick={backToLogin}>Go back to login</button>
           </form>
       </div>
