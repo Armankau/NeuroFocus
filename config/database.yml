@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: NFocus_production
-  username: NFocus
-  password: <%= ENV["NFOCUS_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
