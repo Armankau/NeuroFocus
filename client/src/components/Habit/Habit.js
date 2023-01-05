@@ -131,10 +131,11 @@ function Habit({habits, setHabits, me, setMe, handleScoreToDo}){
 
     return(
       <>
+        <h3 className="habitScore">Total Habits Completed: {me.habit_score}</h3>
         <div id="habitTracker">
         <h1 className="header">My Habit Tracker
         </h1>
-        {habits.map((habit) => <p  key={habit.id} className={habit.completed === 1? "strike" : ""}>
+        {habits.map((habit) => <p  key={habit.id} className={habit.completed === 1? "strike" : "notStriked"}>
             {habit.name}
             <button onClick={() => handleClick(habit)} className="deleteHabit">Delete Habit</button>
             <button onClick={() => handleComplete(habit)} className="completeHabit">Completed</button>
@@ -142,7 +143,6 @@ function Habit({habits, setHabits, me, setMe, handleScoreToDo}){
         <AddHabit handleAddHabit={handleAddHabit} handleHabitName={handleHabitName} name={name}/>
         <button className="resetBtn" onClick={handleReset}>Reset All</button>
         </div>
-        <h3 className="score">Total Habits Completed: {me.habit_score}</h3>
         <Progress habits={habits}/>
         </>
     )

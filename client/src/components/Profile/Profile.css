@@ -1,6 +1,6 @@
 .profileInformation{
     text-align: center;
-    background-color: white;
+    background-color: rgb(221, 236, 242);
     padding: 1rem;
     width: 25rem;
     height: 30 rem;
@@ -13,14 +13,15 @@
     float: left;
     margin-left: 13%;
     margin-right: 10%;
+    margin-top: 8%;
 }
 
 
 .header{
-    background-color: #5A7184 ;
+    background-color: coral ;
     margin-top: 0px;
     text-align: center;
-    color: #D9D9D9;
+    color: white;
 }
 
 .profileImage{
@@ -45,13 +46,9 @@
     width: 150px;
 }
 
-.profileBtn{
-    background-color: white;
-}
-
 .profileScores{
     text-align: center;
-    background-color: white;
+    background-color: rgb(221, 236, 242);
     padding: 1rem;
     width: 25rem;
     height: 30 rem;
@@ -62,8 +59,23 @@
     border-width: 1px;
     color: black;
     margin-right: 10px;
+    margin-top: 8%;
+}
+
+.profileHeader{
+    margin-top: 0;
+    background-color: coral;
 }
 
 .profileScores h3{
     background-color: white;
+}
+
+.page{
+    background-image: url("https://i.imgur.com/K3okJrd.png");
+    height: 825px;
+}
+
+.profileBtn{
+    background-color: rgb(250, 211, 217);
 }

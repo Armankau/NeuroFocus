@@ -14,12 +14,11 @@ function HabitTracker({me, handleScoreToDo, setMe}){
       },[])
    
     return(
-        <>
+        <div className="habitPage">
             <Navbar />
             {/* <Score me={me}/> */}
-            <h1 className="header" >Habits</h1>  
             <Habit habits={habits} me={me} setHabits={setHabits} handleScoreToDo={handleScoreToDo} setMe={setMe}/>
-        </>
+        </div>
     )
 }
 

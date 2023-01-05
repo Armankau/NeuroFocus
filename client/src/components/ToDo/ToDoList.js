@@ -63,7 +63,7 @@ function ToDoList({data, me, setData, setMe, handleTaskScore}){
       <>
       <h2 className="score">Total Tasks Completed: {me.task_score}</h2>
         <div className="ToDoTodayContainer">
-            <h1 className="header" id="toDoHeader">Today</h1>
+            <h1 className="header">Today</h1>
             <p className="myToDo">
                 {data.map((data) => 
                 <div className="todo" key={data.id}>{data.name}  

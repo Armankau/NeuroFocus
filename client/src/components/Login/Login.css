@@ -3,7 +3,6 @@
     text-align: center;
     padding: 1rem;
     width: 25rem;
-    height: 35 rem;
     display: inline-grid;
     color: white;
     opacity: 1;
@@ -24,7 +23,7 @@
 .form input{
     height: 25px;
     margin-top: 5px;
-
+    text-align: center;
 }
 
 
@@ -35,6 +34,15 @@
     font-weight: bold;
     text-align: center;
     height: 30px;
+    margin-top: 5px;
+}
+.login_button{
+    background-color:red;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    height: 40px;
     margin-top: 5px;
 }
 

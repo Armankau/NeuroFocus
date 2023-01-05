@@ -4,7 +4,6 @@
     padding: 1%;
     width: 40%;
     height: 30 rem;
-    opacity: .8;
     display: inline-grid;
     box-shadow: 2px 2px brown ;
     color: black;
@@ -12,6 +11,7 @@
     border-width: 1px;
     margin: 1.4%;
     margin-left: 5%;
+    background-color: white;
 
 }
 .ToDoMonthlyContainer{
@@ -20,7 +20,6 @@
     padding: 1%;
     width: 40%;
     height: 30 rem;
-    opacity: .8;
     display: inline-grid;
     box-shadow: 2px 2px brown ;
     color: black;
@@ -28,6 +27,8 @@
     margin: 1.4%;
     border-width: 1px;
     margin-left: 5%;
+    background-color: white;
+
 
 }
 .ToDoWeeklyContainer{
@@ -36,7 +37,6 @@
     padding: 1%;
     width: 40%;
     height: 30 rem;
-    opacity: .8;
     display: inline-grid;
     box-shadow: 2px 2px brown ;
     color: black;
@@ -44,6 +44,8 @@
     margin: 1.4%;
     border-width: 1px;
     margin-right: 5%;
+    background-color: white;
+
 }
 
 .ToDoYearlyContainer{
@@ -52,12 +54,12 @@
     padding: 1%;
     width: 40%;
     height: 30 rem;
-    opacity: .8;
     display: inline-grid;
     box-shadow: 2px 2px brown ;
     color: black;
     border: solid;
     margin: 1.4%;
+    background-color: white;
     border-width: 1px;}
 
 
@@ -84,7 +86,12 @@
 }
 
 .ToDoform{
-    background-color: pink;
+    background-color: rgb(207, 231, 241);
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.toDos{
+    background-image: url("https://i.imgur.com/K3okJrd.png");
+    height: 825px;
 }
