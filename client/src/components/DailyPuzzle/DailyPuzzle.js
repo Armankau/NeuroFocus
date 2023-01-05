@@ -38,9 +38,8 @@ function DailyPuzzle({me, handleScoreToDo, setMe}){
    }
      
     return(
-        <>
+        <div className="puzzlePage">
             <Navbar />
-            <h1 className="header">Puzzle</h1>
             <h2 className="score">Total Puzzles Solved: {me.score}</h2>
             <form onSubmit={handleDimension} className="puzzleForm"> Specify Puzzle Dimensions:  
                 <input value={row} placeholder="specify rows" onChange={(e) => setRow(e.target.value)}/>
@@ -55,7 +54,8 @@ function DailyPuzzle({me, handleScoreToDo, setMe}){
                 onSolved={() => handleSolved()}/>
             </div>  
             <button className="newPuzzleBtn" onClick={handleRefresh}>Click to Load a New Puzzle</button>
-        </>
+
+        </div>
     )
 }
 export default DailyPuzzle;

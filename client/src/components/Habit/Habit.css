@@ -3,15 +3,18 @@
     padding: 1%;
     width: 40%;
     height: 30 rem;
-    opacity: .8;
     display: inline-grid;
     box-shadow: 2px 2px brown ;
     color: black;
-    border: solid;
     margin: 1.4%;
-    border-width: 1px;
     margin-left: 50%;
     transform: translate(-50%);
+    background-color: white;
+}
+
+.habitPage{
+    background-image: url("https://i.imgur.com/K3okJrd.png");
+    height: 825px;
 }
 
 .habit{
@@ -38,6 +41,11 @@
 
 .strike{
     text-decoration: line-through;
+    margin: 5px;
+}
+
+.notStriked{
+    margin: 5px;
 }
 
 .resetBtn{
@@ -47,6 +55,8 @@
     width: 100%;
     margin-top: 5px;
 }
+
+
 
 .bar{
     margin-left: 50%;
@@ -73,3 +83,15 @@
 }
 
 
+.habitScore{
+    text-align: center;
+    background-color: powderblue;
+    width: 325px;
+    padding: 5px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    margin-top: 30px;
+}

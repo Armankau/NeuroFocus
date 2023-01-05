@@ -35,8 +35,10 @@ function Login({me, setMe}){
     return (
         <div className="loginBody">
         <div className="login-div">
-        <h2 className="loginHeader">Welcome to NeuroFocus! The app designed to improve your focus!</h2>
+        {/* <h2 className="loginHeader">Welcome to NeuroFocus</h2> */}
+
             <form  className="form" onSubmit={handlSubmit}>
+            {/* <h2 className="loginHeader">Welcome to NeuroFocus :)</h2> */}
                 <input 
                     id="username"
                     type="text"
@@ -53,7 +55,7 @@ function Login({me, setMe}){
                 <input 
                 type="submit"
                 value="Login"
-                className="login_buttons"
+                className="login_button"
                 
                 />
                 <button onClick={handleAccount} className="login_buttons">Register a new account</button>

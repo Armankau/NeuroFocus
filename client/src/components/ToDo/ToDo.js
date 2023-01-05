@@ -58,9 +58,8 @@ function ToDo({me, handleScoreToDo, setMe}){
     },[])
 
     return(
-        <>
+        <div className="toDos">
             <Navbar />
-            <h1 className="header">My To-Do list</h1>
             <ToDoList 
                 data={data} 
                 setData={setData} 
@@ -84,7 +83,7 @@ function ToDo({me, handleScoreToDo, setMe}){
                 yearly={yearly} 
                 me={me} 
                 handleTaskScore={handleTaskScore}/>
-        </>
+        </div>
 
     )
 }

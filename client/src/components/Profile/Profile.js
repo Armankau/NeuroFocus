@@ -64,10 +64,9 @@ function Profile({me, setMe}){
         <>
             <Navbar />
             <div className="page">
-            <h1 className="header">Your Profile</h1>
             <div className="profileContainer">
                 <div className="profileInformation">
-                    <h2>Personal Information</h2>
+                    <h2 className="profileHeader">Personal Information</h2>
                     <img className="profileImage" src={me.image}/>
                     <div className="info">Username: {me.username}
                     <form className="formProfile" onSubmit={handleUsername}>
@@ -128,7 +127,7 @@ function Profile({me, setMe}){
                 </div>
             </div>
             <div className="profileScores">
-                <h2>Your Scores</h2>
+                <h2 className="profileHeader">Your Scores</h2>
                 <h3>Total Puzzles Solved: {me.score}</h3>
                 <h3>Total Tasks Completed: {me.task_score}</h3>
                 <h3>Total Habits Completed: {me.habit_score}</h3>

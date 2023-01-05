@@ -3,13 +3,12 @@
     text-align: center;
     padding: 1rem;
     width: 25rem;
-    height: 30 rem;
     display: inline-grid;
     color: white;
     opacity: 1;
     margin-left: 50%;    
     transform: translate(-50%);
-    margin-top: 215px;
+    margin-top: 300px;
     border-style: solid;
     border-width: 2px;
 }
@@ -24,15 +23,26 @@
 .form input{
     height: 25px;
     margin-top: 5px;
-
+    text-align: center;
 }
 
 
 .login_buttons{
-    background-color:rgb(75, 148, 177);
+    background-color:red;
     color: white;
+    font-size: large;
+    font-weight: bold;
     text-align: center;
     height: 30px;
+    margin-top: 5px;
+}
+.login_button{
+    background-color:red;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    height: 40px;
     margin-top: 5px;
 }
 
@@ -41,10 +51,8 @@
     text-align: center;
     border-style: solid;
     border-width: 2px;
-    /* margin-top: 5px; */
-    background-color: white;
-    color: rgb(75, 148, 177);
     margin-top: 0;
-    height: 50px;
-    padding-top: 15px;
+    color: white;
+    background-color: red;
+    border-color: white;
 }

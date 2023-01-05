@@ -40,10 +40,9 @@ function MyCalendar({me}){
 
     
     return(
-        <>
+        <div className="calendarPage">
             <Navbar />
             {/* <Score me={me}/> */}
-            <h1 className="header">Your Calendar</h1>
             <div className='app'>
                 <div className='calendar-container'>
                     <Calendar 
@@ -60,7 +59,7 @@ function MyCalendar({me}){
                 <input type="text" value={date.toJSON().slice(0,10)} onChange={(e) => e.target.value}/>
                 <input type="submit" value="Create a new event"/>
              </form>
-        </>
+        </div>
         
     )
 }
